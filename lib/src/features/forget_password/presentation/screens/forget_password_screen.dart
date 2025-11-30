@@ -6,12 +6,9 @@ class ForgetPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
       backgroundColor: Colors.white,
       appBar: CustomAppBar(imagePath: "assets/png/profile_image.png"),
-      body: Stack(children: [Positioned(
-          top: -70,
-          child: ForgetPasswordBody())]),
+      body: ForgetPasswordBody()
     );
   }
 }

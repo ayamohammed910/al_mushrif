@@ -1,4 +1,5 @@
 part of '../../login_imports.dart';
+
 class LoginRadioButtons extends StatefulWidget {
   const LoginRadioButtons({super.key});
 
@@ -18,14 +19,13 @@ class _LoginRadioButtonsState extends State<LoginRadioButtons> {
     return Form(
       key: formKey,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Align(
-            alignment: Alignment.centerLeft,
-            child: CustomText(
-              "Login with your e-mail address or mobile number",
-              textStyle: TextStyle( fontSize: 14, color: Colors.black87,),
-            ),
+          CustomText(
+            "Login with your e-mail address or mobile number",
+            textStyle: TextStyle(fontSize: 14, color: Colors.black87),
           ),
+
           SizedBox(height: 10),
 
           Row(
@@ -40,7 +40,7 @@ class _LoginRadioButtonsState extends State<LoginRadioButtons> {
               ),
               CustomText(
                 "E-mail Address",
-                textStyle: TextStyle( fontSize: 16,fontWeight: FontWeight.w600),
+                textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
               ),
 
               SizedBox(width: 15),
@@ -54,38 +54,31 @@ class _LoginRadioButtonsState extends State<LoginRadioButtons> {
               ),
               CustomText(
                 "Mobile Number",
-                textStyle: TextStyle( fontSize: 16,fontWeight: FontWeight.w600),
+                textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
               ),
             ],
           ),
           SizedBox(height: 10),
 
           if (isEmail) ...[
-
-            Align(
-              alignment: Alignment.centerLeft,
-              child:  CustomText(
-                "E-mail",
-                textStyle: TextStyle( fontSize: 16,fontWeight: FontWeight.w600),
-              ),
+            CustomText(
+              "E-mail",
+              textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
             ),
-            SizedBox(height: 5),
 
+            SizedBox(height: 5),
 
             CustomTextField(
               hint: "Enter your E-mail",
               controller: emailController,
               obscure: true,
             ),
-
           ] else ...[
-            Align(
-              alignment: Alignment.centerLeft,
-              child:  CustomText(
-                "Mobile",
-                textStyle: TextStyle( fontSize: 16,fontWeight: FontWeight.w600),
-              ),
+            CustomText(
+              "Mobile",
+              textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
             ),
+
             SizedBox(height: 5),
 
             CustomTextField(
@@ -97,13 +90,11 @@ class _LoginRadioButtonsState extends State<LoginRadioButtons> {
 
           SizedBox(height: 20),
 
-          Align(
-            alignment: Alignment.centerLeft,
-            child:  CustomText(
-              "Password",
-              textStyle: TextStyle( fontSize: 16,fontWeight: FontWeight.w600),
-            ),
+          CustomText(
+            "Password",
+            textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
           ),
+
           SizedBox(height: 5),
 
           CustomTextField(
@@ -112,7 +103,6 @@ class _LoginRadioButtonsState extends State<LoginRadioButtons> {
             obscure: true,
             suffixIcon: Icons.visibility,
           ),
-
         ],
       ),
     );

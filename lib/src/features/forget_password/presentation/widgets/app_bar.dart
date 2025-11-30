@@ -10,7 +10,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     required this.imagePath,
     this.showBackButton = true,
-    this.height = 200,
+    this.height = 30,
   });
 
   @override
@@ -26,12 +26,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: () => Navigator.pop(context),
       )
           : null,
-      flexibleSpace: Center(
-        child: Image.asset(
-          imagePath,
-          height: 300,
-        ),
-      ),
     );
   }
 

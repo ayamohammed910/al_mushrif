@@ -1,47 +1,40 @@
 part of '../../login_imports.dart';
-
 class AuthActionsType extends StatefulWidget {
   final ValueChanged<int>? onTabChanged;
+  final int initIndex;
 
-  const AuthActionsType({super.key, this.onTabChanged});
+  const AuthActionsType({
+    super.key,
+    this.onTabChanged,
+    this.initIndex = 0,
+  });
 
   @override
   State<AuthActionsType> createState() => _AuthActionsTypeState();
 }
 
-class _AuthActionsTypeState extends State<AuthActionsType>
-    with SingleTickerProviderStateMixin {
-  late TabController _tabController;
+class _AuthActionsTypeState extends State<AuthActionsType> {
+  int selectedIndex = 0;
+
   final List<String> tabTitles = ["Login", "Register"];
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: tabTitles.length, vsync: this);
-
-    _tabController.addListener(() {
-      if (_tabController.indexIsChanging) return; // avoid double calls
-      widget.onTabChanged?.call(_tabController.index);
-      setState(() {}); // rebuild for UI
-    });
-  }
-
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
+    selectedIndex = widget.initIndex;
   }
 
   void _onTabTapped(int index) {
-    setState(() {}); // rebuild for UI
+    setState(() {
+      selectedIndex = index;
+    });
 
-    _tabController.animateTo(index);
+    widget.onTabChanged?.call(index);
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-
       margin: EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
         boxShadow: [
@@ -59,7 +52,7 @@ class _AuthActionsTypeState extends State<AuthActionsType>
         padding: const EdgeInsets.all(8.0),
         child: Row(
           children: List.generate(tabTitles.length, (index) {
-            bool selected = _tabController.index == index;
+            bool selected = selectedIndex == index;
 
             return Expanded(
               child: InkWell(
@@ -68,14 +61,16 @@ class _AuthActionsTypeState extends State<AuthActionsType>
                 child: Container(
                   height: 40,
                   decoration: BoxDecoration(
-                    color: selected ? Colors.red: Colors.white,
+                    color: selected ? Colors.red : Colors.white,
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: Center(
                     child: CustomText(
                       tabTitles[index],
                       textStyle: TextStyle(
-                        color: selected ? Colors.white : Colors.black,fontSize: 18,fontWeight: FontWeight.bold
+                        color: selected ? Colors.white : Colors.black,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),

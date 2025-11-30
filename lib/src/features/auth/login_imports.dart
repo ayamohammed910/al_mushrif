@@ -6,7 +6,6 @@ import 'package:al_mushrif/src/features/forget_password/forget_password_imports.
 import 'package:flutter/material.dart';
 
 part 'presentation/screens/auth_screen.dart';
-part 'presentation/widgets/auth_body.dart';
 part 'presentation/widgets/auth_header.dart';
 part 'presentation/widgets/login_radio_buttons_forms.dart';
 part 'presentation/widgets/auth_actions_type.dart';

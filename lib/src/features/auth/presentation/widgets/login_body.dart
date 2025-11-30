@@ -1,4 +1,5 @@
 part of '../../login_imports.dart';
+
 class LoginBody extends StatelessWidget {
   final ValueChanged<int> onTabChanged;
 
@@ -8,15 +9,18 @@ class LoginBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        AuthHeader(title: 'Login ', subtitle: "Hello, You are welcome with us!",),
+        AuthHeader(
+          title: 'Login ',
+          subtitle: "Hello, You are welcome with us!",
+        ),
         SizedBox(height: 25),
-        AuthActionsType(onTabChanged: onTabChanged),
+        AuthActionsType(onTabChanged: onTabChanged, initIndex: 0),
         SizedBox(height: 25),
         LoginRadioButtons(),
         SizedBox(height: 30),
         CustomButton(text: "Login", onPressed: () {}),
         SizedBox(height: 20),
-        ForgetPassword()
+        ForgetPassword(),
       ],
     );
   }

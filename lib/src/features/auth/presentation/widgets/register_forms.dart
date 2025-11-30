@@ -1,6 +1,6 @@
 part of '../../login_imports.dart';
-class RegisterForms extends StatefulWidget {
 
+class RegisterForms extends StatefulWidget {
   const RegisterForms({super.key});
 
   @override
@@ -19,9 +19,9 @@ class _RegisterFormsState extends State<RegisterForms> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomText(
-            "User Name",
-            textStyle: TextStyle( fontSize: 16,fontWeight: FontWeight.w600),
-          ),
+          "User Name",
+          textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+        ),
 
         SizedBox(height: 5),
 
@@ -30,9 +30,10 @@ class _RegisterFormsState extends State<RegisterForms> {
           controller: usernameController,
           obscure: true,
         ),
+        SizedBox(height: 10),
         CustomText(
           "E-mail",
-          textStyle: TextStyle( fontSize: 16,fontWeight: FontWeight.w600),
+          textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
 
         SizedBox(height: 5),
@@ -42,10 +43,10 @@ class _RegisterFormsState extends State<RegisterForms> {
           controller: emailController,
           obscure: true,
         ),
-
+        SizedBox(height: 10),
         CustomText(
           "Password",
-          textStyle: TextStyle( fontSize: 16,fontWeight: FontWeight.w600),
+          textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
 
         SizedBox(height: 5),
@@ -56,10 +57,11 @@ class _RegisterFormsState extends State<RegisterForms> {
           obscure: true,
           suffixIcon: Icons.visibility,
         ),
+        SizedBox(height: 10),
 
         CustomText(
           "Confirm Password",
-          textStyle: TextStyle( fontSize: 16,fontWeight: FontWeight.w600),
+          textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
 
         SizedBox(height: 5),

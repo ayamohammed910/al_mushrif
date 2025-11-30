@@ -1,12 +1,17 @@
 part of '../../forget_password_imports.dart';
 
-class ForgetPasswordBody extends StatelessWidget {
+class ForgetPasswordBody extends StatefulWidget {
   const ForgetPasswordBody({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final emailController = TextEditingController();
+  State<ForgetPasswordBody> createState() => _ForgetPasswordBodyState();
+}
 
+class _ForgetPasswordBodyState extends State<ForgetPasswordBody> {
+  final emailController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
         padding: EdgeInsets.all(20),
