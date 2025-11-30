@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+
+class CustomLogo extends StatelessWidget {
+  const CustomLogo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  SizedBox(
+      height: 200,
+      child: Image.asset(
+        "assets/png/logo.png", // put the logo in assets folder
+
+      ),
+    );
+  }
+}
