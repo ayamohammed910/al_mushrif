@@ -20,6 +20,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             SearchBar(),
             Bannar(),
+            SizedBox(height: 20,),
             Row(
               children: [
                 ImageCard(
@@ -72,13 +73,11 @@ class HomeScreen extends StatelessWidget {
             CategoriesGridview(items: items),
             SizedBox(height: 50,),
 
-            Container(
-              child: Image.asset(
-                'assets/png/adver.png',
-                width: double.infinity,
-                height: 100,
-                fit: BoxFit.fill,
-              ),
+            Image.asset(
+              'assets/png/adver.png',
+              width: double.infinity,
+              height: 100,
+              fit: BoxFit.fill,
             ),
           ],
         ),

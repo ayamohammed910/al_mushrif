@@ -25,7 +25,6 @@ class _AppLayoutScreenState extends State<AppLayoutScreen> {
       floatingActionButton: FloatingButton(
         onPressed: () {},
       ),
-
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
       bottomNavigationBar: BottomNavigationBar(
@@ -38,15 +37,12 @@ class _AppLayoutScreenState extends State<AppLayoutScreen> {
 
         selectedItemColor: Colors.red.shade700,
         unselectedItemColor: Colors.black,
-
         type: BottomNavigationBarType.fixed,
-
         items: [
           customNavItem(svgPath: 'assets/svg/home.svg', label: 'Home'),
           customNavItem(svgPath: 'assets/svg/category.svg', label: 'Category'),
           customNavItem(svgPath: 'assets/svg/offers.svg', label: 'Offers'),
           customNavItem(svgPath: 'assets/svg/menu_icon.svg', label: 'More'),
-
         ],
       ),
     );

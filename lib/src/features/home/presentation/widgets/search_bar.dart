@@ -7,12 +7,12 @@ class SearchBar extends StatelessWidget {
   final TextEditingController? controller;
 
   const SearchBar({
-    Key? key,
+    super.key,
     this.onSearchChanged,
     this.onSearchSubmitted,
     this.hintText = 'Search',
     this.controller,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

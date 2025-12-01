@@ -6,12 +6,12 @@ class CategoryItemCircle extends StatelessWidget {
   final double size;
 
   const CategoryItemCircle({
-    Key? key,
+    super.key,
     required this.imagePath,
     required this.backgroundColor,
     required this.title,
     this.size = 100,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +22,7 @@ class CategoryItemCircle extends StatelessWidget {
           child: Container(
             width: size,
             height: size,
+            padding: const EdgeInsets.all(7.0),
             decoration: BoxDecoration(
               color: backgroundColor,
               shape: BoxShape.circle,

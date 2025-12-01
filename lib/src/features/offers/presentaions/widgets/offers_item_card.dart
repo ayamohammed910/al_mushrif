@@ -48,7 +48,7 @@ class ItemCard extends StatelessWidget {
                   top: 8,
                   right: 8,
                   child: InkWell(
-                    onTap: () {},
+                    onTap: onFavoriteTap,
                     child: SvgPicture.asset("assets/svg/empty_fav_icon.svg"),
                   ),
                 ),

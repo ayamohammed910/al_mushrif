@@ -144,14 +144,11 @@ class CategoriesSection extends StatelessWidget {
                       itemCount: items.length,
                       itemBuilder: (context, index) {
                         final item = items[index];
-                        return Padding(
-                          padding: const EdgeInsets.only(right: 16),
-                          child: CategoryItemCircle(
-                            imagePath: item.image,
-                            backgroundColor: item.bg,
-                            title: item.title,
-                            size: 100,
-                          ),
+                        return CategoryItemCircle(
+                          imagePath: item.image,
+                          backgroundColor: item.bg,
+                          title: item.title,
+                          size: 100,
                         );
                       },
                     ),

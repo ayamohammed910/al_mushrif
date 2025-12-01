@@ -6,11 +6,11 @@ class ImageCard extends StatelessWidget {
   final String subtitle;
 
   const ImageCard({
-    Key? key,
+    super.key,
     required this.imagePath,
     required this.title,
     required this.subtitle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +18,6 @@ class ImageCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 20),
-
           SvgPicture.asset(imagePath, width: 20, height: 20, fit: BoxFit.cover),
           SizedBox(height: 2),
           CustomText(

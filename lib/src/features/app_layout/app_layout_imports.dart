@@ -9,5 +9,5 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 part 'presentation/screens/app_layout_screen.dart';
-part 'presentation/widgets/customNavItem.dart';
+part 'presentation/widgets/custom_nav_item.dart';
 part 'presentation/widgets/floating_button.dart';

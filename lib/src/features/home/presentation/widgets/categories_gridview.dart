@@ -4,7 +4,7 @@ class CategoriesGridview extends StatelessWidget {
   // If you want dynamic items, you can pass a smaller list and repeat them
   final List<Map<String, dynamic>> items;
 
-  const CategoriesGridview({Key? key, required this.items}) : super(key: key);
+  const CategoriesGridview({super.key, required this.items});
 
   @override
   Widget build(BuildContext context) {
