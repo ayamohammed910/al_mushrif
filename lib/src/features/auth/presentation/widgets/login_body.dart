@@ -18,7 +18,12 @@ class LoginBody extends StatelessWidget {
         SizedBox(height: 25),
         LoginRadioButtons(),
         SizedBox(height: 30),
-        CustomButton(text: "Login", onPressed: () {}),
+        CustomButton(text: "Login", onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AppLayoutScreen()),
+          );
+        }),
         SizedBox(height: 20),
         ForgetPassword(),
       ],
