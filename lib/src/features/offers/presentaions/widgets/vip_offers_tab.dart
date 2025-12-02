@@ -1,31 +1,23 @@
 part of '../../offers_imports.dart';
-
 class VipOffersTab extends StatelessWidget {
   const VipOffersTab({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
-            child: Image.asset(
-              'assets/png/adver.png',
-              width: double.infinity,
-              height: 100,
-              fit: BoxFit.fill,
-            ),
-          ),
-          OffersGridview(
+    return Column(
+      children: [
+        // Banner
+        CustomVipCard(order: "Subscribe Now",onTap: (){},),
+
+        // Grid of offers
+        Expanded(
+          child: OffersGridview(
             offers: [
               OfferModel(
                 title: "AL ALALI CHOICE PINEAPPLE",
                 category: "General Food",
                 image: "assets/png/product.png",
-                price: 7.75 ,
+                price: 7.75,
                 rating: 4,
               ),
               OfferModel(
@@ -41,13 +33,15 @@ class VipOffersTab extends StatelessWidget {
                 image: "assets/png/product.png",
                 price: 7.75,
                 rating: 0,
-              ), OfferModel(
+              ),
+              OfferModel(
                 title: "California Garden Pineapple",
                 category: "General Food",
                 image: "assets/png/product.png",
                 price: 7.75,
                 rating: 5,
-              ), OfferModel(
+              ),
+              OfferModel(
                 title: "California Garden Pineapple",
                 category: "General Food",
                 image: "assets/png/product.png",
@@ -56,8 +50,8 @@ class VipOffersTab extends StatelessWidget {
               ),
             ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

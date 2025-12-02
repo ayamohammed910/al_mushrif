@@ -4,3 +4,4 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 part 'presentation/screens/more_screen.dart';
 part 'presentation/widgets/more_item_card.dart';
+part 'presentation/widgets/more_grid.dart';

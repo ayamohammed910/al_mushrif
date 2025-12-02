@@ -1,5 +1,4 @@
 part of '../../offers_imports.dart';
-
 class OffersGridview extends StatelessWidget {
   final List<OfferModel> offers;
 
@@ -8,8 +7,6 @@ class OffersGridview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
       padding: const EdgeInsets.all(8),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,

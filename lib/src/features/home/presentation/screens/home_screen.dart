@@ -1,18 +1,16 @@
 part of '../../home_imports.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
+  HomeScreen({super.key});
+  final List<CategoryItemModel> items = [
+    CategoryItemModel(
+      title: "Gifting & Specialty",
+      imagePath: "assets/png/forget_image.png",
+      backgroundColor: Colors.orange,
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
-
-    final List<Map<String, dynamic>> items = [
-      {
-        "image": "assets/png/forget_image.png",
-        "title": "Gifting & Specialty ",
-        "color": Colors.orange,
-      },
-    ];
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: SingleChildScrollView(
@@ -20,7 +18,10 @@ class HomeScreen extends StatelessWidget {
           children: [
             SearchBar(),
             Bannar(),
-            Row(
+            Wrap(
+              alignment: WrapAlignment.spaceBetween,
+              spacing: 12,
+              runSpacing: 12,
               children: [
                 ImageCard(
                   imagePath: 'assets/svg/truck.svg',
@@ -46,40 +47,27 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 16,),
+            SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CustomText(
                   "Categories",
-                  textStyle: TextStyle(
-                      fontSize: 18,
-                      color: Colors.black
-                  ),
+                  textStyle: TextStyle(fontSize: 18, color: Colors.black),
                 ),
                 InkWell(
-                  onTap: (){},
+                  onTap: () {},
                   child: CustomText(
                     "See all",
-                    textStyle: TextStyle(
-                        fontSize: 14,
-                        color: Colors.red
-                    ),
+                    textStyle: TextStyle(fontSize: 14, color: Colors.red),
                   ),
                 ),
               ],
             ),
             CategoriesGridview(items: items),
-            SizedBox(height: 50,),
+            SizedBox(height: 50),
 
-            Container(
-              child: Image.asset(
-                'assets/png/adver.png',
-                width: double.infinity,
-                height: 100,
-                fit: BoxFit.fill,
-              ),
-            ),
+            CustomVipCard(order: "See Offers",onTap: (){},),
           ],
         ),
       ),

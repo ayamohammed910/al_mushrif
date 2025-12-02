@@ -1,7 +1,7 @@
 part of '../../offers_imports.dart';
 
-class OfferPage extends StatelessWidget {
-  const OfferPage({super.key});
+class OffersScreen extends StatelessWidget {
+  const OffersScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

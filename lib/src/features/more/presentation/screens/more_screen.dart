@@ -1,36 +1,40 @@
 part of '../../more_imports.dart';
 
 class MoreScreen extends StatelessWidget {
-
   const MoreScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[100],
-        appBar: AppBar(
+      appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Center(child: const CustomText("More",textStyle: TextStyle(
-        fontSize: 20,fontWeight: FontWeight.bold
-    ),)),),
+        title: Center(
+          child: const CustomText(
+            "More",
+            textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             buildSectionTitle("Your Shortcuts"),
-            buildGrid(YourShortcuts),
+            MoreGrid(items: YourShortcuts),
 
             const SizedBox(height: 20),
             buildSectionTitle("Browse"),
-            buildGrid(Browse),
+            MoreGrid(items: Browse),
 
             const SizedBox(height: 20),
             buildSectionTitle("Support"),
-            buildGrid(Support),
+            MoreGrid(items: Support),
+
             const SizedBox(height: 20),
             buildSectionTitle("Other"),
-            buildGrid(Other),
+            MoreGrid(items: Other),
           ],
         ),
       ),
@@ -42,43 +46,11 @@ class MoreScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Text(
         title,
-        style: const TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-        ),
+        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
       ),
     );
   }
-
-  Widget buildGrid(List<MoreItem> items) {
-    return items.length == 2
-        ? GridView.count(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      crossAxisCount: 2,
-      childAspectRatio: 1.3,
-      crossAxisSpacing: 16,
-      mainAxisSpacing: 16,
-      children: items
-          .map((item) => MoreItemCard(item: item))
-          .toList(),
-    )
-        : GridView.count(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      crossAxisCount: 3,
-      childAspectRatio: 1.05,
-      crossAxisSpacing: 12,
-      mainAxisSpacing: 12,
-      children: items
-          .map((item) => MoreItemCard(item: item))
-          .toList(),
-    );
-  }
 }
-
-
-
 
 List<MoreItem> YourShortcuts = [
   MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Manage Profile"),
@@ -88,26 +60,37 @@ List<MoreItem> YourShortcuts = [
   MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Bezat Points"),
   MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Purchased Orders"),
   MoreItem(image: "assets/svg/loyalty_icon.svg", title: "My Addresses"),
-  MoreItem(image: "assets/svg/loyalty_discount_icon.svg", title: "VIP Subscription"),
+  MoreItem(
+    image: "assets/svg/loyalty_discount_icon.svg",
+    title: "VIP Subscription",
+  ),
   MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Return Orders"),
 ];
 
 List<MoreItem> Browse = [
   MoreItem(image: "assets/svg/all_brands_icon.svg", title: "All Brands"),
-  MoreItem(image: "assets/svg/all_categories_icon.svg", title: "All Categories"),
+  MoreItem(
+    image: "assets/svg/all_categories_icon.svg",
+    title: "All Categories",
+  ),
 ];
 
 List<MoreItem> Support = [
   MoreItem(image: "assets/svg/all_brands_icon.svg", title: "Support"),
-  MoreItem(image: "assets/svg/all_categories_icon.svg", title: "Support Tickets"),
+  MoreItem(
+    image: "assets/svg/all_categories_icon.svg",
+    title: "Support Tickets",
+  ),
 ];
-
 
 List<MoreItem> Other = [
   MoreItem(image: "assets/svg/loyalty_discount_icon.svg", title: "WishLists"),
   MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Bezat Points"),
   MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Purchased Orders"),
   MoreItem(image: "assets/svg/loyalty_icon.svg", title: "My Addresses"),
-  MoreItem(image: "assets/svg/loyalty_discount_icon.svg", title: "VIP Subscription"),
+  MoreItem(
+    image: "assets/svg/loyalty_discount_icon.svg",
+    title: "VIP Subscription",
+  ),
   MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Return Orders"),
 ];

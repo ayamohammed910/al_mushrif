@@ -1,4 +1,6 @@
 import 'package:al_mushrif/src/core/widgets/custom_text.dart';
+import 'package:al_mushrif/src/core/widgets/custom_text_field.dart';
+import 'package:al_mushrif/src/core/widgets/custom_vip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

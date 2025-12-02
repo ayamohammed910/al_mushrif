@@ -1,163 +1,163 @@
 part of '../../categories_imports.dart';
-class CategoriesSection extends StatelessWidget {
-  const CategoriesSection({super.key});
 
-  final List<Map<String, dynamic>> categorySections = const [
+class CategoriesSection extends StatelessWidget {
+  CategoriesSection({super.key});
+
+  final List<Map<String, dynamic>> categorySections = [
     {
       "sectionTitle": "General Food",
       "items": [
-        CategoryModel(
+        CategoryItemModel(
           title: "Frozen & Chilled",
-          image: "assets/png/forget_image.png",
-          bg: Color(0xfffde8ec),
+          imagePath: "assets/png/forget_image.png",
+          backgroundColor: const Color(0xfffde8ec),
         ),
-        CategoryModel(
+        CategoryItemModel(
           title: "Dairy Products",
-          image: "assets/png/forget_image.png",
-          bg: Color(0xfffde8ec),
+          imagePath: "assets/png/forget_image.png",
+          backgroundColor: const Color(0xfffde8ec),
         ),
-        CategoryModel(
+        CategoryItemModel(
           title: "Diet & Diabetic",
-          image: "assets/png/forget_image.png",
-          bg: Color(0xfffde8ec),
+          imagePath: "assets/png/forget_image.png",
+          backgroundColor: Color(0xfffde8ec),
         ),
       ],
     },
     {
       "sectionTitle": "Fresh Food & Deli",
       "items": [
-        CategoryModel(
+        CategoryItemModel(
           title: "Butchery & Poultry",
-          image: "assets/png/forget_image.png",
-          bg: Color(0xfffde8ec),
+          imagePath: "assets/png/forget_image.png",
+          backgroundColor: const Color(0xfffde8ec),
         ),
-        CategoryModel(
+        CategoryItemModel(
           title: "Fresh Bakery",
-          image: "assets/png/forget_image.png",
-          bg: Color(0xfffde8ec),
+          imagePath: "assets/png/forget_image.png",
+          backgroundColor: Color(0xfffde8ec),
         ),
-        CategoryModel(
+        CategoryItemModel(
           title: "Fruits & Vegetables",
-          image: "assets/png/forget_image.png",
-          bg: Color(0xfffde8ec),
+          imagePath: "assets/png/forget_image.png",
+          backgroundColor: const Color(0xfffde8ec),
         ),
-        CategoryModel(
+        CategoryItemModel(
           title: "Seafood",
-          image: "assets/png/forget_image.png",
-          bg: Color(0xfffde8ec),
+          imagePath: "assets/png/forget_image.png",
+          backgroundColor: const Color(0xfffde8ec),
         ),
-        CategoryModel(
+        CategoryItemModel(
           title: "Fruits & Vegetables",
-          image: "assets/png/forget_image.png",
-          bg: Color(0xfffde8ec),
+          imagePath: "assets/png/forget_image.png",
+          backgroundColor: const Color(0xfffde8ec),
         ),
-        CategoryModel(
+        CategoryItemModel(
           title: "Seafood",
-          image: "assets/png/forget_image.png",
-          bg: Color(0xfffde8ec),
+          imagePath: "assets/png/forget_image.png",
+          backgroundColor: const Color(0xfffde8ec),
         ),
       ],
     },
     {
       "sectionTitle": "Bakery",
       "items": [
-        CategoryModel(
+        CategoryItemModel(
           title: "Saninne",
-          image: "assets/png/forget_image.png",
-          bg: Color(0xfffde8ec),
+          imagePath: "assets/png/forget_image.png",
+          backgroundColor: const Color(0xfffde8ec),
         ),
-        CategoryModel(
+        CategoryItemModel(
           title: "Modern Bakery",
-          image: "assets/png/forget_image.png",
-          bg: Color(0xfffde8ec),
+          imagePath: "assets/png/forget_image.png",
+          backgroundColor: const Color(0xfffde8ec),
         ),
-        CategoryModel(
+        CategoryItemModel(
           title: "Golden Spike",
-          image: "assets/png/forget_image.png",
-          bg: Color(0xfffde8ec),
+          imagePath: "assets/png/forget_image.png",
+          backgroundColor: const Color(0xfffde8ec),
         ),
       ],
     },
     {
       "sectionTitle": "Beverages",
       "items": [
-        CategoryModel(
+        CategoryItemModel(
           title: "Saninne",
-          image: "assets/png/forget_image.png",
-          bg: Color(0xfffde8ec),
+          imagePath: "assets/png/forget_image.png",
+          backgroundColor: const Color(0xfffde8ec),
         ),
-        CategoryModel(
+        CategoryItemModel(
           title: "Modern Bakery",
-          image: "assets/png/forget_image.png",
-          bg: Color(0xfffde8ec),
+          imagePath: "assets/png/forget_image.png",
+          backgroundColor: const Color(0xfffde8ec),
         ),
-        CategoryModel(
+        CategoryItemModel(
           title: "Golden Spike",
-          image: "assets/png/forget_image.png",
-          bg: Color(0xfffde8ec),
+          imagePath: "assets/png/forget_image.png",
+          backgroundColor: const Color(0xfffde8ec),
         ),
       ],
     },
   ];
   @override
   Widget build(BuildContext context) {
-    return  Expanded(
+    return Expanded(
       child: ListView.builder(
         itemCount: categorySections.length,
         itemBuilder: (context, sectionIndex) {
           final section = categorySections[sectionIndex];
-          final List<CategoryModel> items =
-          section["items"] as List<CategoryModel>;
-          return Card(
-            color: Colors.white,
-            elevation: 0,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CustomText(
-                        section["sectionTitle"],
-                        textStyle: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const CustomText(
-                        "See all",
-                        textStyle: TextStyle(
-                          color: Colors.red,
-                          fontSize: 14,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 12),
+          final List<CategoryItemModel> items = (section["items"] as List)
+              .cast<CategoryItemModel>();
 
-                  SizedBox(
-                    height: 150,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: items.length,
-                      itemBuilder: (context, index) {
-                        final item = items[index];
-                        return Padding(
-                          padding: const EdgeInsets.only(right: 16),
-                          child: CategoryItemCircle(
-                            imagePath: item.image,
-                            backgroundColor: item.bg,
-                            title: item.title,
-                            size: 100,
-                          ),
-                        );
-                      },
+          return Container(
+            margin: const EdgeInsets.symmetric(vertical: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 4,
+                  offset: Offset(0, 2),
+                ),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CustomText(
+                      section["sectionTitle"],
+                      textStyle: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
+                    const CustomText(
+                      "See all",
+                      textStyle: TextStyle(color: Colors.red, fontSize: 14),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 12),
+                SizedBox(
+                  height: 150,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: items.length,
+                    itemBuilder: (context, index) {
+                      final item = items[index];
+                      return Padding(
+                        padding: const EdgeInsets.only(right: 16),
+                        child: CategoryItemCircle(item: item, size: 100),
+                      );
+                    },
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           );
         },

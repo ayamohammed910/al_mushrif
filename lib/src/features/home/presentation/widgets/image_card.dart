@@ -14,23 +14,28 @@ class ImageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return Container(
+      width: 80,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(height: 20),
 
           SvgPicture.asset(imagePath, width: 20, height: 20, fit: BoxFit.cover),
+
           SizedBox(height: 2),
+
           CustomText(
             title,
             textStyle: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
+
           SizedBox(height: 2),
+
           CustomText(
             subtitle,
-            textStyle: TextStyle(fontSize: 12, color: Colors.grey[700]),
+            textStyle: TextStyle(fontSize: 12, color: Colors.grey),
             textAlign: TextAlign.center,
           ),
         ],

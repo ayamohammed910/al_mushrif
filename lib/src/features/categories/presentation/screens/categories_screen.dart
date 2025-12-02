@@ -1,17 +1,5 @@
 part of '../../categories_imports.dart';
 
-class CategoryModel {
-  final String title;
-  final String image;
-  final Color bg;
-
-  const CategoryModel({
-    required this.title,
-    required this.image,
-    required this.bg,
-  });
-}
-
 class CategoriesPage extends StatelessWidget {
   const CategoriesPage({super.key});
 
