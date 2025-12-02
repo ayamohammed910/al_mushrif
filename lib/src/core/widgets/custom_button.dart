@@ -1,3 +1,5 @@
+import 'package:al_mushrif/src/core/utils/app_colors.dart';
+import 'package:al_mushrif/src/core/utils/app_sizes.dart';
 import 'package:al_mushrif/src/core/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
@@ -20,12 +22,12 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: width ?? double.infinity,
-      height: 50,
+      height: AppSizes.h50,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: isPrimary ? Colors.red: Colors.grey[300],
-          foregroundColor: isPrimary ? Colors.white : Colors.grey[700],
+          backgroundColor: isPrimary ? AppColors.primary: AppColors.grey,
+          foregroundColor: isPrimary ? AppColors.white : AppColors.grey,
           elevation: 2,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25),
@@ -34,7 +36,7 @@ class CustomButton extends StatelessWidget {
         child: CustomText(
           text,
           textStyle: TextStyle(
-            fontSize: 20,
+            fontSize: AppSizes.fs20,
             fontWeight: FontWeight.bold,
           ),
         ),

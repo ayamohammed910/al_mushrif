@@ -10,7 +10,7 @@ class ForgetPassword extends StatelessWidget {
           children: [
             CustomText(
               "Forgot password? ",
-              textStyle: TextStyle(color: Colors.grey),
+              textStyle: TextStyle(color: AppColors.grey),
             ),
             InkWell(
               onTap: (){
@@ -22,7 +22,7 @@ class ForgetPassword extends StatelessWidget {
               child: CustomText(
                 "Restore",
                 textStyle: TextStyle(
-                  color: Colors.red,
+                  color: AppColors.red,
                   fontWeight: FontWeight.bold,
                 ),
               ),

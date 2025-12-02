@@ -9,7 +9,7 @@ class Bannar extends StatelessWidget {
       child: Image.asset(
         'assets/png/bannar.png',
         width: double.infinity,
-        height: 160,
+        height: AppSizes.h160,
         fit: BoxFit.cover,
       ),
     );

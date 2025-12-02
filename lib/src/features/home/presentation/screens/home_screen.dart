@@ -6,13 +6,13 @@ class HomeScreen extends StatelessWidget {
     CategoryItemModel(
       title: "Gifting & Specialty",
       imagePath: "assets/png/forget_image.png",
-      backgroundColor: Colors.orange,
+      backgroundColor: AppColors.secondary,
     ),
   ];
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(AppSizes.p16),
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -47,25 +47,25 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            SizedBox(height: AppSizes.h16),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CustomText(
                   "Categories",
-                  textStyle: TextStyle(fontSize: 18, color: Colors.black),
+                  textStyle: TextStyle(fontSize: AppSizes.fs18, color: AppColors.black),
                 ),
                 InkWell(
                   onTap: () {},
                   child: CustomText(
                     "See all",
-                    textStyle: TextStyle(fontSize: 14, color: Colors.red),
+                    textStyle: TextStyle(fontSize: AppSizes.fs14, color: AppColors.primary),
                   ),
                 ),
               ],
             ),
             CategoriesGridview(items: items),
-            SizedBox(height: 50),
+            SizedBox(height: AppSizes.h50),
 
             CustomVipCard(order: "See Offers",onTap: (){},),
           ],

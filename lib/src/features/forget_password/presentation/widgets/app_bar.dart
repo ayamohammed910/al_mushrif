@@ -10,19 +10,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     required this.imagePath,
     this.showBackButton = true,
-    this.height = 30,
+    this.height = AppSizes.h32,
   });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.transparent,
+      backgroundColor: AppColors.transparent,
       elevation: 0,
       automaticallyImplyLeading: false,
       centerTitle: true,
       leading: showBackButton
           ? IconButton(
-        icon: Icon(Icons.arrow_back, color: Colors.black),
+        icon: Icon(Icons.arrow_back, color: AppColors.black),
         onPressed: () => Navigator.pop(context),
       )
           : null,

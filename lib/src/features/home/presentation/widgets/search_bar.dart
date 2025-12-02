@@ -20,13 +20,13 @@ class SearchBar extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 16, vertical: 25),
+            margin: EdgeInsets.symmetric( vertical: AppSizes.p24),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: AppColors.ScafoldBackground,
               borderRadius: BorderRadius.circular(25),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black12,
+                  color: AppColors.ScafoldBackground,
                   blurRadius: 4,
                   offset: Offset(0, 2),
                 ),

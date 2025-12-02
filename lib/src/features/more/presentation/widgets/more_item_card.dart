@@ -11,9 +11,9 @@ class MoreItemCard extends StatelessWidget {
     return InkWell(
       onTap: item.onTap,
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 18),
+        padding: EdgeInsets.symmetric(vertical: AppSizes.p16),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: AppColors.white,
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
@@ -28,15 +28,15 @@ class MoreItemCard extends StatelessWidget {
           children: [
            SvgPicture.asset(
               item.image,
-              width: 36,
-              height: 36,
+              width: AppSizes.w36,
+              height: AppSizes.h36,
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: AppSizes.h10),
             Text(
               item.title,
               textAlign: TextAlign.center,
               style: const TextStyle(
-                fontSize: 13,
+                fontSize: AppSizes.fs14,
                 fontWeight: FontWeight.w600,
               ),
             ),

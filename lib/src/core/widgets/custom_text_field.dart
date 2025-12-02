@@ -1,3 +1,4 @@
+import 'package:al_mushrif/src/core/utils/app_sizes.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -37,8 +38,8 @@ class CustomTextField extends StatelessWidget {
           focusedBorder: InputBorder.none,
           enabledBorder: InputBorder.none,
           contentPadding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 16,
+            horizontal: AppSizes.p20,
+            vertical: AppSizes.p16,
           ),
         ),
       ),

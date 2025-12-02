@@ -1,3 +1,5 @@
+import 'package:al_mushrif/src/core/utils/app_colors.dart';
+import 'package:al_mushrif/src/core/utils/app_sizes.dart';
 import 'package:al_mushrif/src/core/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -21,32 +23,32 @@ class CustomVipCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 100,
+      height: AppSizes.h100,
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           colors: [
-            Color(0xFFC6161D),
-            Color(0xFFFF4B4B),
+            AppColors.primary,
+            AppColors.secondary,
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(AppSizes.p16),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(width: 10,),
+            SizedBox(width: AppSizes.w10,),
             SvgPicture.asset("assets/svg/vip_mark.svg"),
-            SizedBox(width: 20,),
+            SizedBox(width: AppSizes.w20,),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CustomText(title,textStyle: TextStyle(color: Colors.white),),
-                  CustomText(subtitle,textStyle: TextStyle(color: Colors.white,fontSize: 20),)
+                  CustomText(title,textStyle: TextStyle(color: AppColors.white),),
+                  CustomText(subtitle,textStyle: TextStyle(color:  AppColors.white,fontSize: AppSizes.fs20),)
                 ],
               ),
             ),
@@ -57,20 +59,20 @@ class CustomVipCard extends StatelessWidget {
                 InkWell(
                   onTap: onTap,
                   child: Container(
-                    width: 36,
-                    height: 36,
+                    width: AppSizes.w36,
+                    height: AppSizes.h36,
                     decoration: const BoxDecoration(
-                      color: Colors.white,
+                      color: AppColors.white,
                       shape: BoxShape.circle,
                     ),
                     child: const Icon(
                       Icons.arrow_forward,
-                      color: Color(0xFFC6161D),
+                      color: AppColors.primary,
                       size: 20,
                     ),
                   ),
                 ),
-                CustomText(order,textStyle: TextStyle(color: Colors.white),)
+                CustomText(order,textStyle: TextStyle(color: AppColors.white),)
 
               ],
             ),

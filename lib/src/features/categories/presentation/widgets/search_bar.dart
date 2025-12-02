@@ -20,13 +20,13 @@ class SearchBar extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            margin: EdgeInsets.symmetric(horizontal: AppSizes.p16, vertical: AppSizes.p16),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: AppColors.white,
               borderRadius: BorderRadius.circular(25),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black12,
+                  color: AppColors.grey,
                   blurRadius: 4,
                   offset: Offset(0, 2),
                 ),
@@ -40,24 +40,24 @@ class SearchBar extends StatelessWidget {
               },
               decoration: InputDecoration(
                 hintText: hintText,
-                hintStyle: TextStyle(color: Colors.black, fontSize: 14),
+                hintStyle: TextStyle(color: AppColors.black, fontSize: AppSizes.fs14),
                 suffixIcon: Padding(
-                  padding: const EdgeInsets.all(15.0),
+                  padding: const EdgeInsets.all(AppSizes.p16),
                   child: InkWell(
                     onTap: () {},
                     child: SvgPicture.asset(
                       "assets/svg/search_icon.svg",
-                      color: Colors.grey[600],
+                      color: AppColors.grey,
                     ),
                   ),
                 ),
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.symmetric(
-                  vertical: 16,
-                  horizontal: 16,
+                  vertical: AppSizes.p16,
+                  horizontal: AppSizes.p16,
                 ),
               ),
-              style: TextStyle(fontSize: 14, color: Colors.black87),
+              style: TextStyle(fontSize: AppSizes.fs14, color: AppColors.black),
             ),
           ),
         ),

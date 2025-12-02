@@ -6,13 +6,13 @@ class MoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: AppColors.ScafoldBackground,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Center(
           child: const CustomText(
             "More",
-            textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            textStyle: TextStyle(fontSize: AppSizes.fs20, fontWeight: FontWeight.bold),
           ),
         ),
       ),
@@ -24,15 +24,15 @@ class MoreScreen extends StatelessWidget {
             buildSectionTitle("Your Shortcuts"),
             MoreGrid(items: YourShortcuts),
 
-            const SizedBox(height: 20),
+            const SizedBox(height: AppSizes.h20),
             buildSectionTitle("Browse"),
             MoreGrid(items: Browse),
 
-            const SizedBox(height: 20),
+            const SizedBox(height: AppSizes.h20),
             buildSectionTitle("Support"),
             MoreGrid(items: Support),
 
-            const SizedBox(height: 20),
+            const SizedBox(height: AppSizes.h20),
             buildSectionTitle("Other"),
             MoreGrid(items: Other),
           ],
@@ -43,10 +43,10 @@ class MoreScreen extends StatelessWidget {
 
   Widget buildSectionTitle(String title) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.symmetric(vertical: AppSizes.p8),
       child: Text(
         title,
-        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        style: const TextStyle(fontSize: AppSizes.fs18, fontWeight: FontWeight.bold),
       ),
     );
   }

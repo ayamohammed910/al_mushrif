@@ -24,7 +24,7 @@ class CategoryItemCircle extends StatelessWidget {
             ),
             child: ClipOval(
               child: Padding(
-                padding: const EdgeInsets.all(7.0),
+                padding: const EdgeInsets.all(AppSizes.p8),
                 child: Image.asset(
                   item.imagePath,
                   fit: BoxFit.cover,
@@ -36,12 +36,12 @@ class CategoryItemCircle extends StatelessWidget {
         const SizedBox(height: 4),
         Flexible(
           child: SizedBox(
-            width: size + 10,
+            width: size + AppSizes.w10,
             child: Text(
               item.title,
               textAlign: TextAlign.center,
               style: const TextStyle(
-                fontSize: 10,
+                fontSize: AppSizes.fs10,
                 fontWeight: FontWeight.bold,
               ),
               maxLines: 2,

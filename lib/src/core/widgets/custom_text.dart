@@ -1,3 +1,5 @@
+import 'package:al_mushrif/src/core/utils/app_colors.dart';
+import 'package:al_mushrif/src/core/utils/app_sizes.dart';
 import 'package:flutter/material.dart';
 
 class CustomText extends StatelessWidget {
@@ -22,9 +24,9 @@ class CustomText extends StatelessWidget {
       maxLines: maxLines,
       style: textStyle ??
           const TextStyle(
-            fontSize: 16,
+            fontSize: AppSizes.fs16,
             fontWeight: FontWeight.w400,
-            color: Colors.black,
+            color: AppColors.black,
           ),
     );
   }

@@ -111,13 +111,13 @@ class CategoriesSection extends StatelessWidget {
               .cast<CategoryItemModel>();
 
           return Container(
-            margin: const EdgeInsets.symmetric(vertical: 8),
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+            margin: const EdgeInsets.symmetric(vertical: AppSizes.p8),
+            padding: const EdgeInsets.symmetric(horizontal: AppSizes.p16, vertical: AppSizes.p4),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: AppColors.white,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black12,
+                  color: AppColors.grey,
                   blurRadius: 4,
                   offset: Offset(0, 2),
                 ),
@@ -132,17 +132,17 @@ class CategoriesSection extends StatelessWidget {
                     CustomText(
                       section["sectionTitle"],
                       textStyle: const TextStyle(
-                        fontSize: 20,
+                        fontSize: AppSizes.fs20,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     const CustomText(
                       "See all",
-                      textStyle: TextStyle(color: Colors.red, fontSize: 14),
+                      textStyle: TextStyle(color: AppColors.primary, fontSize: AppSizes.fs14),
                     ),
                   ],
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: AppSizes.h12),
                 SizedBox(
                   height: 150,
                   child: ListView.builder(
@@ -151,7 +151,7 @@ class CategoriesSection extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final item = items[index];
                       return Padding(
-                        padding: const EdgeInsets.only(right: 16),
+                        padding: const EdgeInsets.only(right: AppSizes.p16),
                         child: CategoryItemCircle(item: item, size: 100)
                         ,
 

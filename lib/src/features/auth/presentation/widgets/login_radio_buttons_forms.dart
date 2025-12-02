@@ -23,7 +23,7 @@ class _LoginRadioButtonsState extends State<LoginRadioButtons> {
         children: [
           CustomText(
             "Login with your e-mail address or mobile number",
-            textStyle: TextStyle(fontSize: 14, color: Colors.black87),
+            textStyle: TextStyle(fontSize: AppSizes.fs14, color: AppColors.black),
           ),
 
           SizedBox(height: 10),
@@ -33,40 +33,40 @@ class _LoginRadioButtonsState extends State<LoginRadioButtons> {
               Radio(
                 value: true,
                 groupValue: isEmail,
-                activeColor: Colors.red,
+                activeColor: AppColors.primary,
                 onChanged: (val) {
                   setState(() => isEmail = true);
                 },
               ),
               CustomText(
                 "E-mail Address",
-                textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                textStyle: TextStyle(fontSize: AppSizes.fs16, fontWeight: FontWeight.w600),
               ),
 
               SizedBox(width: 15),
               Radio(
                 value: false,
                 groupValue: isEmail,
-                activeColor: Colors.red,
+                activeColor: AppColors.primary,
                 onChanged: (val) {
                   setState(() => isEmail = false);
                 },
               ),
               CustomText(
                 "Mobile Number",
-                textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                textStyle: TextStyle(fontSize: AppSizes.fs16, fontWeight: FontWeight.w600),
               ),
             ],
           ),
-          SizedBox(height: 10),
+          SizedBox(height: AppSizes.h10),
 
           if (isEmail) ...[
             CustomText(
               "E-mail",
-              textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+              textStyle: TextStyle(fontSize: AppSizes.fs16, fontWeight: FontWeight.w600),
             ),
 
-            SizedBox(height: 5),
+            SizedBox(height: AppSizes.h4),
 
             CustomTextField(
               hint: "Enter your E-mail",
@@ -76,10 +76,10 @@ class _LoginRadioButtonsState extends State<LoginRadioButtons> {
           ] else ...[
             CustomText(
               "Mobile",
-              textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+              textStyle: TextStyle(fontSize: AppSizes.fs16, fontWeight: FontWeight.w600),
             ),
 
-            SizedBox(height: 5),
+            SizedBox(height: AppSizes.h4),
 
             CustomTextField(
               hint: "Enter your mobile",
@@ -88,11 +88,11 @@ class _LoginRadioButtonsState extends State<LoginRadioButtons> {
             ),
           ],
 
-          SizedBox(height: 20),
+          SizedBox(height: AppSizes.h20),
 
           CustomText(
             "Password",
-            textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+            textStyle: TextStyle(fontSize: AppSizes.fs16, fontWeight: FontWeight.w600),
           ),
 
           SizedBox(height: 5),

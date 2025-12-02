@@ -7,7 +7,10 @@ class VipOffersTab extends StatelessWidget {
     return Column(
       children: [
         // Banner
-        CustomVipCard(order: "Subscribe Now",onTap: (){},),
+        Padding(
+          padding: const EdgeInsets.all(AppSizes.p8),
+          child: CustomVipCard(order: "Subscribe Now",onTap: (){},),
+        ),
 
         // Grid of offers
         Expanded(

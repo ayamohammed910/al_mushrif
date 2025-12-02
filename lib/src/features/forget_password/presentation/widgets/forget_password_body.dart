@@ -14,45 +14,45 @@ class _ForgetPasswordBodyState extends State<ForgetPasswordBody> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(AppSizes.p20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
-              height: 200,
+              height: AppSizes.h200,
               child: Image.asset(
-                "assets/png/forget_image.png", // put the logo in assets folder
+                "assets/png/forget_image.png",
               ),
             ),
             CustomText(
               "Forgot password ?",
-              textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
+              textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: AppSizes.fs24),
             ),
-            SizedBox(height: 5),
+            SizedBox(height: AppSizes.h4),
             CustomText(
               "Enter the E-mail to recover the password",
-              textStyle: TextStyle(fontSize: 14, color: Colors.grey),
+              textStyle: TextStyle(fontSize: AppSizes.fs14, color: AppColors.ScafoldBackground),
             ),
             SizedBox(height: 20),
             Align(
               alignment: Alignment.centerLeft,
               child: CustomText(
                 "E-mail",
-                textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                textStyle: TextStyle(fontSize: AppSizes.fs16, fontWeight: FontWeight.w600),
               ),
             ),
 
-            SizedBox(height: 5),
+            SizedBox(height: AppSizes.h4),
 
             CustomTextField(
               hint: "Enter your E-mail",
               controller: emailController,
               obscure: true,
             ),
-            SizedBox(height: 30),
+            SizedBox(height: AppSizes.h32),
 
             CustomButton(text: "Send", onPressed: () {}),
-            SizedBox(height: 20),
+            SizedBox(height: AppSizes.h20),
             InkWell(
               onTap: () {
                 Navigator.pop(context);
@@ -60,8 +60,8 @@ class _ForgetPasswordBodyState extends State<ForgetPasswordBody> {
               child: CustomText(
                 "Back To Login",
                 textStyle: TextStyle(
-                  color: Colors.red,
-                  fontSize: 15,
+                  color: AppColors.primary,
+                  fontSize: AppSizes.fs16,
                   fontWeight: FontWeight.bold,
                 ),
               ),

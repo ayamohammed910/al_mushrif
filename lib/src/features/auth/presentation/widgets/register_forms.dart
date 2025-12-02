@@ -20,36 +20,36 @@ class _RegisterFormsState extends State<RegisterForms> {
       children: [
         CustomText(
           "User Name",
-          textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+          textStyle: TextStyle(fontSize: AppSizes.fs16, fontWeight: FontWeight.w600),
         ),
 
-        SizedBox(height: 5),
+        SizedBox(height: AppSizes.h4),
 
         CustomTextField(
           hint: "Enter your User Name",
           controller: usernameController,
           obscure: true,
         ),
-        SizedBox(height: 10),
+        SizedBox(height: AppSizes.h10),
         CustomText(
           "E-mail",
-          textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+          textStyle: TextStyle(fontSize: AppSizes.fs16, fontWeight: FontWeight.w600),
         ),
 
-        SizedBox(height: 5),
+        SizedBox(height: AppSizes.h4),
 
         CustomTextField(
           hint: "Enter your E-mail",
           controller: emailController,
           obscure: true,
         ),
-        SizedBox(height: 10),
+        SizedBox(height: AppSizes.h10),
         CustomText(
           "Password",
-          textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+          textStyle: TextStyle(fontSize: AppSizes.fs16, fontWeight: FontWeight.w600),
         ),
 
-        SizedBox(height: 5),
+        SizedBox(height: AppSizes.h4),
 
         CustomTextField(
           hint: "Enter your Password",
@@ -57,14 +57,14 @@ class _RegisterFormsState extends State<RegisterForms> {
           obscure: true,
           suffixIcon: Icons.visibility,
         ),
-        SizedBox(height: 10),
+        SizedBox(height: AppSizes.h10),
 
         CustomText(
           "Confirm Password",
-          textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+          textStyle: TextStyle(fontSize: AppSizes.fs16, fontWeight: FontWeight.w600),
         ),
 
-        SizedBox(height: 5),
+        SizedBox(height: AppSizes.h4),
 
         CustomTextField(
           hint: "Enter your Confirm Password",

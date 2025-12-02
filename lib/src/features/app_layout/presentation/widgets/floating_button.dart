@@ -12,15 +12,11 @@ class FloatingButton extends StatelessWidget {
       children: [
         FloatingActionButton(
           onPressed: onPressed,
-          backgroundColor: Color(0xFFC6161D),
+          backgroundColor: AppColors.primary,
           shape: const CircleBorder(),
-          child: SvgPicture.asset("assets/svg/cart.svg",color: Colors.white,height: 25,)
+          child: SvgPicture.asset("assets/svg/cart.svg",color: AppColors.white,height: AppSizes.h24,)
         ),
-        const SizedBox(height: 23),
-        // CustomText(
-        //   "label",
-        //   textStyle: const TextStyle(fontSize: 18, color: Colors.red),
-        // ),
+        const SizedBox(height: AppSizes.h24),
       ],
     );
   }

@@ -15,12 +15,14 @@ class CustomNavBar extends StatelessWidget {
     final icons = [
       "assets/svg/home.svg",
       "assets/svg/category.svg",
+      "",
       "assets/svg/offers.svg",
       "assets/svg/more.svg",
     ];
-    final labels = ["Home", "Categories", "Offers", "More"];
+    final labels = ["Home", "Categories", "Cart","Offers", "More"];
 
     return AnimatedBottomNavigationBar.builder(
+      notchMargin: 0,
       itemCount: icons.length,
       activeIndex: currentIndex,
       gapLocation: GapLocation.none,
@@ -32,23 +34,23 @@ class CustomNavBar extends StatelessWidget {
           children: [
             AnimatedContainer(
               duration: const Duration(milliseconds: 300),
-              padding: const EdgeInsets.all(6),
+              padding: const EdgeInsets.all(AppSizes.p6),
               decoration: BoxDecoration(
-                color: active ? Color(0xFFC6161D) : Colors.transparent,
+                color: active ? AppColors.primary : AppColors.transparent,
                 shape: BoxShape.circle,
               ),
               child: SvgPicture.asset(
                 icons[index],
-                height: active ? 24 : 20,
-                color: active ? Colors.white : Colors.black,
+                height: active ? AppSizes.h24 : AppSizes.h20,
+                color: active ? AppColors.white : AppColors.black,
               ),
             ),
-            const SizedBox(height: 2),
+             SizedBox(height: AppSizes.h2),
             Text(
               labels[index],
               style: TextStyle(
-                color: active ? Color(0xFFC6161D) : Colors.black,
-                fontSize: 12,
+                color: active ? AppColors.primary : AppColors.black,
+                fontSize: AppSizes.fs12,
                 fontWeight: FontWeight.bold,
               ),
             ),

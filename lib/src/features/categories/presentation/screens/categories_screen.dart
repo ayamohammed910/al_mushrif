@@ -9,15 +9,15 @@ class CategoriesPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.white,
         centerTitle: true,
-        toolbarHeight: 80,
+        toolbarHeight: AppSizes.h80,
         title: Image.asset(
           'assets/png/logo.png',
-          height: 100,
+          height: AppSizes.h100,
         ),
       ),
-      backgroundColor: Colors.grey[200],
+      backgroundColor: AppColors.ScafoldBackground,
       body: Column(
         children: [
           SearchBar(),

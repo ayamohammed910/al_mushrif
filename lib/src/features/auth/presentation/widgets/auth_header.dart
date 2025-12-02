@@ -12,16 +12,16 @@ class AuthHeader extends StatelessWidget {
 
       children: [
         CustomLogo(),
-        SizedBox(height: 5),
+        SizedBox(height: AppSizes.h4),
 
         CustomText(
           title,
-          textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
+          textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: AppSizes.fs24),
         ),
-        SizedBox(height: 5),
+        SizedBox(height: AppSizes.h4),
         CustomText(
           subtitle,
-          textStyle: TextStyle(fontSize: 14, color: Colors.grey),
+          textStyle: TextStyle(fontSize: AppSizes.fs14, color: AppColors.grey),
         ),
       ],
     );

@@ -1,3 +1,4 @@
+import 'package:al_mushrif/src/core/utils/app_sizes.dart';
 import 'package:flutter/material.dart';
 
 class CustomLogo extends StatelessWidget {
@@ -6,7 +7,7 @@ class CustomLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  SizedBox(
-      height: 200,
+      height: AppSizes.h200,
       child: Image.asset(
         "assets/png/logo.png",
       ),

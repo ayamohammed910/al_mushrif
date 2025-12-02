@@ -17,10 +17,10 @@ class ItemCard extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.all(8),
-        padding: const EdgeInsets.all(10),
+        margin: const EdgeInsets.all(AppSizes.p8),
+        padding: const EdgeInsets.all(AppSizes.p10),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: AppColors.white,
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
@@ -39,7 +39,7 @@ class ItemCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                   child: Image.asset(
                     offerModel.image,
-                    height: 130,
+                    height: AppSizes.h120,
                     width: double.infinity,
                     fit: BoxFit.fill,
                   ),
@@ -54,19 +54,19 @@ class ItemCard extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 6),
+             SizedBox(height: AppSizes.h8),
             Text(
               offerModel.category,
-              style: const TextStyle(fontSize: 12, color: Colors.grey),
+              style: const TextStyle(fontSize: AppSizes.fs12, color: AppColors.ScafoldBackground),
             ),
-            const SizedBox(height: 4),
+            const SizedBox(height: AppSizes.h4),
             Text(
               offerModel.title,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: AppSizes.fs14, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 6),
+            const SizedBox(height: AppSizes.h8),
             Row(
               children: List.generate(
                 5,
@@ -86,9 +86,9 @@ class ItemCard extends StatelessWidget {
                 Text(
                   "${offerModel.price} / PCS",
                   style: const TextStyle(
-                    fontSize: 14,
+                    fontSize: AppSizes.fs14,
                     fontWeight: FontWeight.bold,
-                    color: Colors.red,
+                    color: AppColors.primary,
                   ),
                 ),
                 const Icon(Icons.shopping_bag_outlined, size: 24),

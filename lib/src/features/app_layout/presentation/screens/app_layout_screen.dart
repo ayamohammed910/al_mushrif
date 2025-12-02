@@ -13,6 +13,7 @@ class _AppLayoutScreenState extends State<AppLayoutScreen> {
   final List<Widget> screens = [
     HomeScreen(),
     CategoriesPage(),
+    Container(child: Text("text")),
     OffersScreen(),
     MoreScreen(),
   ];
@@ -20,13 +21,16 @@ class _AppLayoutScreenState extends State<AppLayoutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.ScafoldBackground,
       body: screens[_currentIndex],
-      floatingActionButton: FloatingButton(onPressed: () {}),
+      floatingActionButton: FloatingButton(onPressed: () {setState(() {
+        _currentIndex = 2;
+      });}),
 
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
       bottomNavigationBar: CustomNavBar(
+
         currentIndex: _currentIndex,
         onTap: (index) {
           setState(() {

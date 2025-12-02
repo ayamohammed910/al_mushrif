@@ -11,13 +11,13 @@ class OffersScreen extends StatelessWidget {
         appBar: AppBar(
           automaticallyImplyLeading: false,
           title: Center(child: const CustomText("Offers",textStyle: TextStyle(
-            fontSize: 20,fontWeight: FontWeight.bold
+            fontSize: AppSizes.fs20,fontWeight: FontWeight.bold
           ),)),
-          backgroundColor: Colors.white,
+          backgroundColor: AppColors.white,
           bottom: const TabBar(
-            labelColor: Colors.red,
-            unselectedLabelColor: Colors.black,
-            indicatorColor: Colors.red,
+            labelColor: AppColors.primary,
+            unselectedLabelColor: AppColors.black,
+            indicatorColor: AppColors.primary,
             indicatorWeight: 3,
             tabs: [
               Tab(text: "VIP Offers"),

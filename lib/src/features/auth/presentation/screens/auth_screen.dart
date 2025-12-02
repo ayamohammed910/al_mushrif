@@ -23,7 +23,7 @@ class _AuthScreenState extends State<AuthScreen> {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(AppSizes.p20),
           child: Column(
             children: [
               _currentTab == 0
@@ -31,7 +31,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   : RegisterBody(onTabChanged: _onTabChanged),
 
 
-              SizedBox(height: 40),
+              SizedBox(height: AppSizes.h40),
             ],
           ),
         ),

@@ -13,18 +13,18 @@ class LoginBody extends StatelessWidget {
           title: 'Login ',
           subtitle: "Hello, You are welcome with us!",
         ),
-        SizedBox(height: 25),
+        SizedBox(height: AppSizes.h24),
         AuthActionsType(onTabChanged: onTabChanged, initIndex: 0),
-        SizedBox(height: 25),
+        SizedBox(height: AppSizes.h24),
         LoginRadioButtons(),
-        SizedBox(height: 30),
+        SizedBox(height: AppSizes.h32),
         CustomButton(text: "Login", onPressed: () {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => AppLayoutScreen()),
           );
         }),
-        SizedBox(height: 20),
+        SizedBox(height: AppSizes.h20),
         ForgetPassword(),
       ],
     );
