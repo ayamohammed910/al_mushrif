@@ -153,6 +153,7 @@ class CategoriesSection extends StatelessWidget {
                       return Padding(
                         padding: const EdgeInsets.only(right: 16),
                         child: CategoryItemCircle(item: item, size: 100),
+
                       );
                     },
                   ),
