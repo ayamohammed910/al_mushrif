@@ -8,8 +8,7 @@ class CustomLogo extends StatelessWidget {
     return  SizedBox(
       height: 200,
       child: Image.asset(
-        "assets/png/logo.png", // put the logo in assets folder
-
+        "assets/png/logo.png",
       ),
     );
   }

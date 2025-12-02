@@ -1,4 +1,104 @@
 
+last review points
+
+# home_screen.dart
+
+1. view throw exception
+   ======== Exception caught by widgets library =======================================================
+   The following assertion was thrown while applying parent data.:
+   Incorrect use of ParentDataWidget.
+ هو ال design ظاهر بس وقت ما نطلع نسخه او نرفع نسخه release ال design كله هيختفى
+ فى expanded او Flexible موجوده ف مكان غلط
+
+2. there is padding inside singleChildScrollView
+3. جزء ال vip مش صوره...container و اللون بتاعه graidiant
+4. 
+كنا قولنا ما ينفعش object جوا ال build كذالك ال variable ما ينفعش نعمل اى object or variable جوا ال build الا لو cubit
+
+
+# categories_gridview.dart
+نفس الكلام ما ينفعش variable جو ال build
+
+
+# search_bar.dart
+ليه textField من الاول و انتى عامله واحد custom جاهز.!
+اطلبى الحجات الزياده nullable عادى 
+لو احتجتى تستعملبها..تمام 
+طالما فى حاجه general او على مستوى التطبيق كله او اغلبيته الاحسن ان بلاش نعملها من الاول طالما custom من الاول...نعدل على ال  custom من غير ما الباقى يتاثر 
+
+
+
+# categories_section.dart
+استعملى container بدل ال card هتديكى تحكم اكبر ب ال decoration
+و مفيش radius من كل الجوانب
+
+# category_item_circle 
+مش ضرورى اوى نطلب الحجات المختلفه سواء صوره او تيكست..الخ
+لو حابه تعملى نفس الشكل بالظبط تقدرى تستخدمى model افضل بدل ال map و نطلب model ل item بدل ال parameters دول كلهم
+
+
+# vip_offers_tab.dart
+نفس الكلام بالنسبه ل vip section
+
+
+# more_screen.dart
+1. الاحسن نفصل ال buildGrid ف stateLessWidget لوحدها 
+2. بدل ما نعمل check و يكون فى اتنين gridView نقدر نستعمل gridView عاديه و نفس الكلام نطلب ليها list ال items
+
+
+#offers_screen
+سيبى ال gridView تعمل scroll عادى ولو هى موجوده جوا Column خليها جوا expanded ف ال column 
+مش هنحتاج كل ال singleChild دول
+
+
+# app_layout_screen.dart
+floatActionButton not the same as in Screen
+  # custom_nav_item
+خلى ال icon جوا container و صغرى الحجم شويه 
+لما يبقى select نغير لون ال container لو لا ياخد Colors.transparent
+و جربى تستخدمى باكدج animatedBottomNavigationBar
+
+primaryColor >> Color(0xFFC6161D)
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # login_radio_buttons_forms.dart
 no need to use Align widget...while column has (CrossAxisAlignment.start) 
