@@ -59,8 +59,11 @@ class CategoryItemModel {
   final String imagePath;
   final Color backgroundColor;
   final String title;
+  final List<CategoryModel> products;
+
 
   CategoryItemModel({
+    this.products = const [],
     required this.imagePath,
     required this.backgroundColor,
     required this.title,

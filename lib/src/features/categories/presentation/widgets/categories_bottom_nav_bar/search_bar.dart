@@ -1,4 +1,4 @@
-part of '../../categories_imports.dart';
+part of '../../../categories_imports.dart';
 
 class SearchBar extends StatelessWidget {
   final ValueChanged<String>? onSearchChanged;

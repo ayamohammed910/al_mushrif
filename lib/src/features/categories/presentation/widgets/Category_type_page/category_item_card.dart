@@ -1,13 +1,13 @@
-part of '../../offers_imports.dart';
+part of '../../../categories_imports.dart';
 
-class ItemCard extends StatelessWidget {
-  final OfferModel offerModel;
+class CategoryItemCard extends StatelessWidget {
+  final CategoryModel categoryModel;
   final VoidCallback? onTap;
   final VoidCallback? onFavoriteTap;
 
-  const ItemCard({
+  const CategoryItemCard({
     super.key,
-    required this.offerModel,
+    required this.categoryModel,
     this.onTap,
     this.onFavoriteTap,
   });
@@ -38,7 +38,7 @@ class ItemCard extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: Image.asset(
-                    offerModel.image,
+                    categoryModel.image,
                     height: AppSizes.h120,
                     width: double.infinity,
                     fit: BoxFit.fill,
@@ -54,17 +54,23 @@ class ItemCard extends StatelessWidget {
                 ),
               ],
             ),
-             SizedBox(height: AppSizes.h8),
+            SizedBox(height: AppSizes.h8),
             Text(
-              offerModel.category,
-              style: const TextStyle(fontSize: AppSizes.fs12, color: AppColors.grey),
+              categoryModel.category,
+              style: const TextStyle(
+                fontSize: AppSizes.fs12,
+                color: AppColors.grey,
+              ),
             ),
             const SizedBox(height: AppSizes.h4),
             Text(
-              offerModel.title,
+              categoryModel.title,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: const TextStyle(fontSize: AppSizes.fs14, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                fontSize: AppSizes.fs14,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const SizedBox(height: AppSizes.h8),
             Row(
@@ -73,7 +79,7 @@ class ItemCard extends StatelessWidget {
                 (index) => Icon(
                   Icons.star,
                   size: 14,
-                  color: index < offerModel.rating
+                  color: index < categoryModel.rating
                       ? Colors.amber
                       : Colors.grey[300],
                 ),
@@ -84,14 +90,23 @@ class ItemCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "${offerModel.price} / PCS",
+                  "${categoryModel.price} / PCS",
                   style: const TextStyle(
                     fontSize: AppSizes.fs14,
                     fontWeight: FontWeight.bold,
                     color: AppColors.primary,
                   ),
                 ),
-                const Icon(Icons.shopping_bag_outlined, size: 24),
+                InkWell(
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      barrierDismissible: true,
+                      builder: (context) => CartDialog(),
+                    );
+                  },
+                  child: const Icon(Icons.shopping_bag_outlined, size: 24),
+                ),
               ],
             ),
           ],
@@ -101,7 +116,7 @@ class ItemCard extends StatelessWidget {
   }
 }
 
-class OfferModel {
+class CategoryModel {
   final String title;
   final String category;
   final String image;
@@ -109,7 +124,7 @@ class OfferModel {
   final double rating;
   final bool isFavorite;
 
-  OfferModel({
+  CategoryModel({
     required this.title,
     required this.category,
     required this.image,

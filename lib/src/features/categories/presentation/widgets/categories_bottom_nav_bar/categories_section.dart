@@ -1,9 +1,54 @@
-part of '../../categories_imports.dart';
+part of '../../../categories_imports.dart';
 
 class CategoriesSection extends StatelessWidget {
   CategoriesSection({super.key});
 
-  final List<Map<String, dynamic>> categorySections = [
+  final List<CategoryModel> demoProducts = [
+    CategoryModel(
+      title: "AL ALALI CHOICE PINEAPPLE",
+      category: "General Food",
+      image: "assets/png/product.png",
+      price: 7.75,
+      rating: 4,
+    ),
+    CategoryModel(
+      title: "Fresh Milk Bottle",
+      category: "Frozen & Chilled",
+      image: "assets/png/product.png",
+      price: 12.00,
+      rating: 5,
+    ),
+    CategoryModel(
+      title: "AL ALALI CHOICE PINEAPPLE",
+      category: "General Food",
+      image: "assets/png/product.png",
+      price: 7.75,
+      rating: 4,
+    ),
+    CategoryModel(
+      title: "Fresh Milk Bottle",
+      category: "Frozen & Chilled",
+      image: "assets/png/product.png",
+      price: 12.00,
+      rating: 5,
+    ),
+    CategoryModel(
+      title: "AL ALALI CHOICE PINEAPPLE",
+      category: "General Food",
+      image: "assets/png/product.png",
+      price: 7.75,
+      rating: 4,
+    ),
+    CategoryModel(
+      title: "Fresh Milk Bottle",
+      category: "Frozen & Chilled",
+      image: "assets/png/product.png",
+      price: 12.00,
+      rating: 5,
+    ),
+  ];
+
+  late final List<Map<String, dynamic>> categorySections = [
     {
       "sectionTitle": "General Food",
       "items": [
@@ -11,16 +56,19 @@ class CategoriesSection extends StatelessWidget {
           title: "Frozen & Chilled",
           imagePath: "assets/png/forget_image.png",
           backgroundColor: const Color(0xfffde8ec),
+          products: demoProducts,
         ),
         CategoryItemModel(
-          title: "Dairy Products",
+          title: "Frozen & Chilled",
           imagePath: "assets/png/forget_image.png",
           backgroundColor: const Color(0xfffde8ec),
+          products: demoProducts,
         ),
         CategoryItemModel(
-          title: "Diet & Diabetic",
+          title: "Frozen & Chilled",
           imagePath: "assets/png/forget_image.png",
-          backgroundColor: Color(0xfffde8ec),
+          backgroundColor: const Color(0xfffde8ec),
+          products: demoProducts,
         ),
       ],
     },
@@ -31,31 +79,37 @@ class CategoriesSection extends StatelessWidget {
           title: "Butchery & Poultry",
           imagePath: "assets/png/forget_image.png",
           backgroundColor: const Color(0xfffde8ec),
+          products: demoProducts,
         ),
         CategoryItemModel(
           title: "Fresh Bakery",
           imagePath: "assets/png/forget_image.png",
           backgroundColor: Color(0xfffde8ec),
+          products: demoProducts,
         ),
         CategoryItemModel(
           title: "Fruits & Vegetables",
           imagePath: "assets/png/forget_image.png",
           backgroundColor: const Color(0xfffde8ec),
+          products: demoProducts,
         ),
         CategoryItemModel(
           title: "Seafood",
           imagePath: "assets/png/forget_image.png",
           backgroundColor: const Color(0xfffde8ec),
+          products: demoProducts,
         ),
         CategoryItemModel(
           title: "Fruits & Vegetables",
           imagePath: "assets/png/forget_image.png",
           backgroundColor: const Color(0xfffde8ec),
+          products: demoProducts,
         ),
         CategoryItemModel(
           title: "Seafood",
           imagePath: "assets/png/forget_image.png",
           backgroundColor: const Color(0xfffde8ec),
+          products: demoProducts,
         ),
       ],
     },
@@ -66,16 +120,20 @@ class CategoriesSection extends StatelessWidget {
           title: "Saninne",
           imagePath: "assets/png/forget_image.png",
           backgroundColor: const Color(0xfffde8ec),
+          products: demoProducts,
         ),
         CategoryItemModel(
           title: "Modern Bakery",
           imagePath: "assets/png/forget_image.png",
           backgroundColor: const Color(0xfffde8ec),
+          products: demoProducts,
+
         ),
         CategoryItemModel(
           title: "Golden Spike",
           imagePath: "assets/png/forget_image.png",
           backgroundColor: const Color(0xfffde8ec),
+          products: demoProducts,
         ),
       ],
     },
@@ -86,16 +144,19 @@ class CategoriesSection extends StatelessWidget {
           title: "Saninne",
           imagePath: "assets/png/forget_image.png",
           backgroundColor: const Color(0xfffde8ec),
+          products: demoProducts,
         ),
         CategoryItemModel(
           title: "Modern Bakery",
           imagePath: "assets/png/forget_image.png",
           backgroundColor: const Color(0xfffde8ec),
+          products: demoProducts,
         ),
         CategoryItemModel(
           title: "Golden Spike",
           imagePath: "assets/png/forget_image.png",
           backgroundColor: const Color(0xfffde8ec),
+          products: demoProducts,
         ),
       ],
     },
@@ -112,7 +173,10 @@ class CategoriesSection extends StatelessWidget {
 
           return Container(
             margin: const EdgeInsets.symmetric(vertical: AppSizes.p8),
-            padding: const EdgeInsets.symmetric(horizontal: AppSizes.p16, vertical: AppSizes.p4),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSizes.p16,
+              vertical: AppSizes.p4,
+            ),
             decoration: BoxDecoration(
               color: AppColors.white,
               boxShadow: [
@@ -138,7 +202,10 @@ class CategoriesSection extends StatelessWidget {
                     ),
                     const CustomText(
                       "See all",
-                      textStyle: TextStyle(color: AppColors.primary, fontSize: AppSizes.fs14),
+                      textStyle: TextStyle(
+                        color: AppColors.primary,
+                        fontSize: AppSizes.fs14,
+                      ),
                     ),
                   ],
                 ),
@@ -152,9 +219,18 @@ class CategoriesSection extends StatelessWidget {
                       final item = items[index];
                       return Padding(
                         padding: const EdgeInsets.only(right: AppSizes.p16),
-                        child: CategoryItemCircle(item: item, size: 100)
-                        ,
-
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(50),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => CategoryTypePage(products: item.products),
+                              ),
+                            );
+                          },
+                          child: CategoryItemCircle(item: item, size: 100),
+                        ),
                       );
                     },
                   ),
