@@ -1,6 +1,8 @@
 part of '../../../categories_imports.dart';
 
 class CartDialog extends StatefulWidget {
+  const CartDialog({super.key});
+
   @override
   State<CartDialog> createState() => _CartDialogState();
 }
@@ -61,12 +63,9 @@ class _CartDialogState extends State<CartDialog> {
                 ),
               ],
             ),
-
             const SizedBox(height: AppSizes.h20),
             const Divider(color: Colors.grey, thickness: 1, height: 1),
             const SizedBox(height: AppSizes.h20),
-
-            // ➖ Quantity + ➕
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [

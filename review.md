@@ -1,6 +1,45 @@
 
 last review points
 
+
+# filter_side_menu.dart
+wrap singleChild with Column then wrap with expanded below expanded the buttons "confirm" and reset 
+خلى ال singleChild جوا Column و بعدها خلى ال singleChild ف expanded و تحت ال expanded ضيفى ال row الى فيه ال buttons 
+دا هيخليهم ف الاخر و بقيه الديزاين يسكرول عادى
+
+مفيش داعى ل container و نديله width ال row كدا كدا هيخليه ياخد ال width كله
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # home_screen.dart
 
 1. view throw exception

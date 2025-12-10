@@ -22,7 +22,6 @@ class CategoriesPage extends StatelessWidget {
         children: [
           SearchBar(),
           CategoriesSection()
-
         ],
       ),
     );

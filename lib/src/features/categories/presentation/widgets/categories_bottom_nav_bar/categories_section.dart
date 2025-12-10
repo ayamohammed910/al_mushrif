@@ -48,7 +48,7 @@ class CategoriesSection extends StatelessWidget {
     ),
   ];
 
-  late final List<Map<String, dynamic>> categorySections = [
+    List<Map<String, dynamic>> get categorySections => [
     {
       "sectionTitle": "General Food",
       "items": [

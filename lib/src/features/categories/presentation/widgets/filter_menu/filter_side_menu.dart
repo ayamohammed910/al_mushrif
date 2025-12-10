@@ -1,12 +1,16 @@
 part of '../../../categories_imports.dart';
 
 class FilterSideMenu extends StatefulWidget {
+  const FilterSideMenu({super.key});
+
   @override
-  _FilterSideMenuState createState() => _FilterSideMenuState();
+  FilterSideMenuState createState() => FilterSideMenuState();
 }
 
-class _FilterSideMenuState extends State<FilterSideMenu> {
-  TextEditingController _searchController = TextEditingController();
+class FilterSideMenuState extends State<FilterSideMenu> {
+
+  final TextEditingController _searchController = TextEditingController();
+
   RangeValues _currentRange = const RangeValues(100, 800);
 
   double price = 500;
@@ -54,7 +58,6 @@ class _FilterSideMenuState extends State<FilterSideMenu> {
         bottom: MediaQuery.of(context).viewInsets.bottom,
       ),
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.85,
         padding: const EdgeInsets.all(AppSizes.h16),
         child: SingleChildScrollView(
           child: Column(
@@ -69,7 +72,7 @@ class _FilterSideMenuState extends State<FilterSideMenu> {
                     color: AppColors.black,
                     fontWeight: FontWeight.w500,
                   ),
-          
+
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey),
                   ),
@@ -79,7 +82,7 @@ class _FilterSideMenuState extends State<FilterSideMenu> {
                       width: AppSizes.w4,
                     ),
                   ),
-          
+
                   suffixIcon: IconButton(
                     icon: Icon(Icons.clear, color: AppColors.black),
                     onPressed: () {
@@ -92,7 +95,7 @@ class _FilterSideMenuState extends State<FilterSideMenu> {
                 controller: _searchController,
               ),
               SizedBox(height: AppSizes.h20),
-          
+
               // PRICE RANGE
               CustomText(
                 "Price Range",
@@ -108,16 +111,16 @@ class _FilterSideMenuState extends State<FilterSideMenu> {
                 divisions: 100,
                 activeColor: AppColors.primary,
                 inactiveColor: Colors.grey.shade300,
-          
+
                 onChanged: (RangeValues values) {
                   setState(() {
                     _currentRange = values;
                   });
                 },
               ),
-          
+
               const SizedBox(height: AppSizes.h10),
-          
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -131,7 +134,7 @@ class _FilterSideMenuState extends State<FilterSideMenu> {
                   ),
                 ],
               ),
-          
+
               SizedBox(height: AppSizes.h24),
               CheckboxList(
                 title: "Brand",
@@ -146,7 +149,6 @@ class _FilterSideMenuState extends State<FilterSideMenu> {
                 selectedColor: AppColors.primary,
                 unselectedColor: AppColors.black,
               ),
-
           SizedBox(height: AppSizes.h20,),
               Container(
                 width: double.infinity,

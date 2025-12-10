@@ -61,37 +61,15 @@ class CategoryTypePage extends StatelessWidget {
               width: AppSizes.w24,
               height: AppSizes.h24,
             ),
-            onPressed: () {
-              showGeneralDialog(
-                context: context,
-                barrierDismissible: true,
-                barrierLabel: "Filter",
-                transitionDuration: const Duration(milliseconds: 350),
-                pageBuilder: (_, __, ___) {
-                  return Align(
-                    alignment: Alignment.centerLeft,
-                    child: Material(
-                      color: Colors.white,
-                      child: SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.75,
-                        height: MediaQuery.of(context).size.height,
-                        child: FilterSideMenu(),
-                      ),
-                    ),
-                  );
-                },
-                transitionBuilder: (_, anim, __, child) {
-                  return SlideTransition(
-                    position: Tween(
-                      begin: const Offset(-1, 0),
-                      end: Offset.zero,
-                    ).animate(anim),
-                    child: child,
-                  );
-                },
-              );
-            },
+            onPressed: () => _openFilter(context),
           ),
+        ],
+      ),
+      body: Column(
+        children: [
+          SizedBox(height: AppSizes.h20),
+          CategoryOptions(items: demoItems),
+          Expanded(child: CategoryGridView(categoryModels: products)),
         ],
       ),
       floatingActionButton: SizedBox(
@@ -112,15 +90,38 @@ class CategoryTypePage extends StatelessWidget {
           onPressed: () {},
         ),
       ),
-
       floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
-      body: Column(
-        children: [
-          SizedBox(height: AppSizes.h20),
-          CategoryOptions(items: demoItems),
-          Expanded(child: CategoryGridView(categoryModels: products)),
-        ],
-      ),
+    );
+  }
+
+  void _openFilter(BuildContext context) {
+       showGeneralDialog(
+      context: context,
+      barrierDismissible: true,
+      barrierLabel: "Filter",
+      transitionDuration: const Duration(milliseconds: 350),
+      pageBuilder: (_, __, ___) {
+        return Align(
+          alignment: Alignment.centerLeft,
+          child: Material(
+            color: Colors.white,
+            child: SizedBox(
+              width: MediaQuery.sizeOf(context).width * 0.75,
+              height: MediaQuery.sizeOf(context).height,
+              child: FilterSideMenu(),
+            ),
+          ),
+        );
+      },
+      transitionBuilder: (_, anim, __, child) {
+        return SlideTransition(
+          position: Tween(
+            begin: const Offset(-1, 0),
+            end: Offset.zero,
+          ).animate(anim),
+          child: child,
+        );
+      },
     );
   }
 }

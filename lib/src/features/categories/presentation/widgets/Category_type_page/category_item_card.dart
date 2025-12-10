@@ -98,13 +98,7 @@ class CategoryItemCard extends StatelessWidget {
                   ),
                 ),
                 InkWell(
-                  onTap: () {
-                    showDialog(
-                      context: context,
-                      barrierDismissible: true,
-                      builder: (context) => CartDialog(),
-                    );
-                  },
+                  onTap: () => _showProductDialog(context),
                   child: const Icon(Icons.shopping_bag_outlined, size: 24),
                 ),
               ],
@@ -112,6 +106,14 @@ class CategoryItemCard extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  Future<dynamic> _showProductDialog(BuildContext context) {
+    return showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (context) => CartDialog(),
     );
   }
 }
