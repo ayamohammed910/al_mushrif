@@ -78,7 +78,7 @@ class _CartDialogState extends State<CartDialog> {
                 ),
                 const SizedBox(width: AppSizes.w24),
 
-                _qtyButton(Icons.remove, () {
+                QtyButton(icon: Icons.remove, onTap: () {
                   if (quantity > 1) {
                     setState(() => quantity--);
                   }
@@ -96,9 +96,11 @@ class _CartDialogState extends State<CartDialog> {
 
                 const SizedBox(width: AppSizes.w32),
 
-                _qtyButton(Icons.add, () {
-                  setState(() => quantity++);
-                }),
+               QtyButton(icon: Icons.add, onTap:(){
+                 setState(() => quantity++);
+               })
+
+
               ],
             ),
 
@@ -155,18 +157,4 @@ class _CartDialogState extends State<CartDialog> {
       ),
     );
   }
-
-  // Quantity button widget
-  Widget _qtyButton(IconData icon, VoidCallback onTap) {
-    return Container(
-      decoration: const BoxDecoration(
-        shape: BoxShape.circle,
-        color: Colors.red,
-      ),
-      child: IconButton(
-        icon: Icon(icon, color: Colors.white),
-        onPressed: onTap,
-      ),
-    );
   }
-}

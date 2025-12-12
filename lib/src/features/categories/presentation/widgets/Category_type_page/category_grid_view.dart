@@ -18,7 +18,17 @@ class CategoryGridView extends StatelessWidget {
       itemCount: categoryModels.length,
       itemBuilder: (_, index) {
         final item = categoryModels[index];
-        return CategoryItemCard(categoryModel: item);
+        return InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => ProductsScreen(category: item),
+              ),
+            );
+          },
+          child: CategoryItemCard(categoryModel: item),
+        );
       },
     );
   }

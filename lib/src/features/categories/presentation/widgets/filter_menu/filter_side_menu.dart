@@ -50,7 +50,6 @@ class FilterSideMenuState extends State<FilterSideMenu> {
 
   bool brandExpanded = false;
   bool colorExpanded = false;
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -59,118 +58,123 @@ class FilterSideMenuState extends State<FilterSideMenu> {
       ),
       child: Container(
         padding: const EdgeInsets.all(AppSizes.h16),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: AppSizes.h10),
-              TextField(
-                decoration: InputDecoration(
-                  hintText: "Filter",
-                  hintStyle: TextStyle(
-                    fontSize: AppSizes.fs18,
-                    color: AppColors.black,
-                    fontWeight: FontWeight.w500,
-                  ),
-
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: AppColors.primary,
-                      width: AppSizes.w4,
-                    ),
-                  ),
-
-                  suffixIcon: IconButton(
-                    icon: Icon(Icons.clear, color: AppColors.black),
-                    onPressed: () {
-                      setState(() {
-                        _searchController.clear();
-                      });
-                    },
-                  ),
-                ),
-                controller: _searchController,
-              ),
-              SizedBox(height: AppSizes.h20),
-
-              // PRICE RANGE
-              CustomText(
-                "Price Range",
-                textStyle: TextStyle(
-                  fontSize: AppSizes.fs16,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              RangeSlider(
-                values: _currentRange,
-                min: 0,
-                max: 1229,
-                divisions: 100,
-                activeColor: AppColors.primary,
-                inactiveColor: Colors.grey.shade300,
-
-                onChanged: (RangeValues values) {
-                  setState(() {
-                    _currentRange = values;
-                  });
-                },
-              ),
-
-              const SizedBox(height: AppSizes.h10),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CustomText(
-                    "${_currentRange.start.toInt()}",
-                    textStyle: const TextStyle(fontSize: AppSizes.fs16),
-                  ),
-                  CustomText(
-                    "${_currentRange.end.toInt()}",
-                    textStyle: const TextStyle(fontSize: AppSizes.fs16),
-                  ),
-                ],
-              ),
-
-              SizedBox(height: AppSizes.h24),
-              CheckboxList(
-                title: "Brand",
-                items: brands,
-                selectedColor: AppColors.primary,
-                unselectedColor: AppColors.black,
-              ),
-              // BRAND DROPDOWN
-              CheckboxList(
-                title: "Color",
-                items: colors,
-                selectedColor: AppColors.primary,
-                unselectedColor: AppColors.black,
-              ),
-          SizedBox(height: AppSizes.h20,),
-              Container(
-                width: double.infinity,
-                child: Row(
+        child: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Expanded(
-                      child: CustomButton(text: "Confirm", onPressed: () {}),
+                    SizedBox(height: AppSizes.h10),
+                    TextField(
+                      decoration: InputDecoration(
+                        hintText: "Filter",
+                        hintStyle: TextStyle(
+                          fontSize: AppSizes.fs18,
+                          color: AppColors.black,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.grey),
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.primary,
+                            width: AppSizes.w4,
+                          ),
+                        ),
+                        suffixIcon: IconButton(
+                          icon: Icon(Icons.clear, color: AppColors.black),
+                          onPressed: () {
+                            setState(() {
+                              _searchController.clear();
+                            });
+                          },
+                        ),
+                      ),
+                      controller: _searchController,
                     ),
-                    SizedBox(width: AppSizes.w32),
+
+                    SizedBox(height: AppSizes.h20),
+
                     CustomText(
-                      "Reset",
+                      "Price Range",
                       textStyle: TextStyle(
-                        fontSize: AppSizes.fs20,
-                        color: AppColors.primary,
-                        fontWeight: FontWeight.bold,
+                        fontSize: AppSizes.fs16,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
+
+                    RangeSlider(
+                      values: _currentRange,
+                      min: 0,
+                      max: 1229,
+                      divisions: 100,
+                      activeColor: AppColors.primary,
+                      inactiveColor: Colors.grey.shade300,
+                      onChanged: (RangeValues values) {
+                        setState(() {
+                          _currentRange = values;
+                        });
+                      },
+                    ),
+
+                    const SizedBox(height: AppSizes.h10),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CustomText(
+                          "${_currentRange.start.toInt()}",
+                          textStyle: const TextStyle(fontSize: AppSizes.fs16),
+                        ),
+                        CustomText(
+                          "${_currentRange.end.toInt()}",
+                          textStyle: const TextStyle(fontSize: AppSizes.fs16),
+                        ),
+                      ],
+                    ),
+
+                    SizedBox(height: AppSizes.h24),
+
+                    CheckboxList(
+                      title: "Brand",
+                      items: brands,
+                      selectedColor: AppColors.primary,
+                      unselectedColor: AppColors.black,
+                    ),
+
+                    CheckboxList(
+                      title: "Color",
+                      items: colors,
+                      selectedColor: AppColors.primary,
+                      unselectedColor: AppColors.black,
+                    ),
+
+                    SizedBox(height: AppSizes.h20),
                   ],
                 ),
               ),
-            ],
-          ),
+            ),
+
+            Row(
+              children: [
+                Expanded(
+                  child: CustomButton(text: "Confirm", onPressed: () {}),
+                ),
+                SizedBox(width: AppSizes.w32),
+                CustomText(
+                  "Reset",
+                  textStyle: TextStyle(
+                    fontSize: AppSizes.fs20,
+                    color: AppColors.primary,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+
+          ],
         ),
       ),
     );

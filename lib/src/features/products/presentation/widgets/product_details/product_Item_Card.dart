@@ -1,13 +1,12 @@
-part of '../../../categories_imports.dart';
-
-class CategoryItemCard extends StatelessWidget {
-  final CategoryModel categoryModel;
+part of '../../../products_imports.dart';
+class ProductItemCard extends StatelessWidget {
+  final ProductModel productModel;
   final VoidCallback? onTap;
   final VoidCallback? onFavoriteTap;
 
-  const CategoryItemCard({
+  const ProductItemCard({
     super.key,
-    required this.categoryModel,
+    required this.productModel,
     this.onTap,
     this.onFavoriteTap,
   });
@@ -38,7 +37,7 @@ class CategoryItemCard extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: Image.asset(
-                    categoryModel.image,
+                    productModel.image,
                     height: AppSizes.h120,
                     width: double.infinity,
                     fit: BoxFit.fill,
@@ -56,7 +55,7 @@ class CategoryItemCard extends StatelessWidget {
             ),
             SizedBox(height: AppSizes.h8),
             Text(
-              categoryModel.category,
+              productModel.category,
               style: const TextStyle(
                 fontSize: AppSizes.fs12,
                 color: AppColors.grey,
@@ -64,7 +63,7 @@ class CategoryItemCard extends StatelessWidget {
             ),
             const SizedBox(height: AppSizes.h4),
             Text(
-              categoryModel.title,
+              productModel.title,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
@@ -76,10 +75,10 @@ class CategoryItemCard extends StatelessWidget {
             Row(
               children: List.generate(
                 5,
-                (index) => Icon(
+                    (index) => Icon(
                   Icons.star,
                   size: 14,
-                  color: index < categoryModel.rating
+                  color: index < productModel.rating
                       ? AppColors.yellow
                       : AppColors.grey,
                 ),
@@ -90,7 +89,7 @@ class CategoryItemCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "${categoryModel.price} / PCS",
+                  "${productModel.price} / PCS",
                   style: const TextStyle(
                     fontSize: AppSizes.fs14,
                     fontWeight: FontWeight.bold,
@@ -118,7 +117,7 @@ class CategoryItemCard extends StatelessWidget {
   }
 }
 
-class CategoryModel {
+class ProductModel {
   final String title;
   final String category;
   final String image;
@@ -126,7 +125,7 @@ class CategoryModel {
   final double rating;
   final bool isFavorite;
 
-  CategoryModel({
+  ProductModel({
     required this.title,
     required this.category,
     required this.image,
