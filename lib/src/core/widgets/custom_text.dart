@@ -25,7 +25,7 @@ class CustomText extends StatelessWidget {
       style: textStyle ??
           const TextStyle(
             fontSize: AppSizes.fs16,
-            fontWeight: FontWeight.w400,
+            fontWeight: FontWeight.w500,
             color: AppColors.black,
           ),
     );

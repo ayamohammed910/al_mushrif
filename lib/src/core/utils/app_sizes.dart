@@ -66,5 +66,6 @@ class AppSizes {
   static const double w100 = 100;
   static const double w120 = 120;
   static const double w160 = 160;
+  static const double w200 = 200;
 
 }

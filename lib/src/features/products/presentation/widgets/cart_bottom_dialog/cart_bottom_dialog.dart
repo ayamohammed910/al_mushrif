@@ -2,7 +2,9 @@ part of '../../../products_imports.dart';
 
 class CartBottomSheet {
   static void showCartBottomSheet(
-      BuildContext context, List<CartItemModel> cartItems) {
+    BuildContext context,
+    List<CartItemModel> cartItems,
+  ) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -15,7 +17,7 @@ class CartBottomSheet {
           builder: (context, setState) {
             double total = cartItems.fold(
               0,
-                  (sum, item) => sum + item.price * item.quantity,
+              (sum, item) => sum + item.price * item.quantity,
             );
 
             return Padding(
@@ -35,7 +37,10 @@ class CartBottomSheet {
 
                   const Text(
                     "Cart",
-                    style: TextStyle(fontSize: AppSizes.fs20, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: AppSizes.fs20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   const SizedBox(height: AppSizes.h12),
 
@@ -47,7 +52,9 @@ class CartBottomSheet {
                       itemBuilder: (_, i) {
                         final item = cartItems[i];
                         return Padding(
-                          padding: const EdgeInsets.symmetric(vertical: AppSizes.p6),
+                          padding: const EdgeInsets.symmetric(
+                            vertical: AppSizes.p6,
+                          ),
                           child: CartItemDialog(
                             item: item,
                             onIncrease: () {
@@ -60,7 +67,8 @@ class CartBottomSheet {
                             },
                             onDelete: () {
                               setState(() => cartItems.removeAt(i));
-                            }, onFavorite: () {  },
+                            },
+                            onFavorite: () {},
                           ),
                         );
                       },
@@ -78,12 +86,24 @@ class CartBottomSheet {
                     ),
                     child: const Text(
                       "Continue shopping",
-                      style: TextStyle(color:AppColors.primary, fontSize: AppSizes.fs18),
+                      style: TextStyle(
+                        color: AppColors.primary,
+                        fontSize: AppSizes.fs18,
+                      ),
                     ),
                   ),
                   const SizedBox(height: AppSizes.h10),
-                  CustomButton(text:  "Check out : AED ${total.toStringAsFixed(2)}", onPressed: (){}),
-
+                  CustomButton(
+                    text: "Check out : AED ${total.toStringAsFixed(2)}",
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AddressScreen(),
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
             );

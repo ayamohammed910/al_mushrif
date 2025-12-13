@@ -1,3 +1,4 @@
+import 'package:al_mushrif/src/core/utils/app_colors.dart';
 import 'package:al_mushrif/src/core/utils/app_sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,7 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color:Colors.grey.shade100,
+        color:AppColors.white,
         borderRadius: BorderRadius.circular(35),
       ),
       child: TextField(
