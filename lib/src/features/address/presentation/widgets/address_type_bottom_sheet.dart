@@ -54,7 +54,7 @@ class AddressTypeBottomSheet extends StatelessWidget {
                     0,
                     12,
                     12,
-                  ), // 👈 LEFT & RIGHT SPACE
+                  ),
                   padding: const EdgeInsets.symmetric(
                     vertical: 14,
                     horizontal: 16,

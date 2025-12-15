@@ -27,11 +27,10 @@ class ProductBottomNavbar extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: CustomButton(text: 'Add To Cart', onPressed: () {
+            child: CustomButton(text: 'Add To Cart',
+              onPressed: () {
               CartBottomSheet.showCartBottomSheet(context, cartItems);
-
             },
-
             ),
           ),
           const SizedBox(width: AppSizes.w16),

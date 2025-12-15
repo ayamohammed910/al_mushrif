@@ -45,8 +45,6 @@ class _ProductDatailsInfoState extends State<ProductDatailsInfo> {
         ),
 
         const SizedBox(height: AppSizes.h8),
-
-        /// STARS + REVIEWS
         Row(
           children: [
             for (int i = 1; i <= 5; i++)
