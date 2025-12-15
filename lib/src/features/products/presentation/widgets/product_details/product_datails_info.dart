@@ -120,8 +120,8 @@ class _ProductDatailsInfoState extends State<ProductDatailsInfo> {
 
         const SizedBox(height: AppSizes.h20),
 
-
         const SizedBox(height: 10),
+
 
         Container(
           height: AppSizes.h80,

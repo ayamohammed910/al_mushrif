@@ -15,7 +15,7 @@ class CustomButton extends StatelessWidget {
     required this.onPressed,
     this.isPrimary = true,
     this.width,
-    this.hight
+    this.hight,
   });
 
   @override
@@ -26,7 +26,7 @@ class CustomButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: isPrimary ? AppColors.primary: AppColors.grey,
+          backgroundColor: isPrimary ? AppColors.primary : AppColors.grey,
           foregroundColor: isPrimary ? AppColors.white : AppColors.grey,
           elevation: 2,
           shape: RoundedRectangleBorder(
