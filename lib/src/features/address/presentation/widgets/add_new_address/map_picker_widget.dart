@@ -1,5 +1,4 @@
 part of '../../../address_imports.dart';
-
 class MapPickerScreen extends StatefulWidget {
   const MapPickerScreen({super.key});
 
@@ -8,35 +7,59 @@ class MapPickerScreen extends StatefulWidget {
 }
 
 class _MapPickerScreenState extends State<MapPickerScreen> {
-  LatLng selectedLocation = LatLng(30.0444, 31.2357); // Cairo
+  LatLng selectedLocation = const LatLng(30.0444, 31.2357); // Cairo
   String addressText = "Detecting address...";
 
-  Future<AddressData> _getAddress(LatLng pos) async {
-    final placemarks = await placemarkFromCoordinates(
-      pos.latitude,
-      pos.longitude,
-    );
-    final place = placemarks.first;
-
-    final addressData = AddressData(
-      fullAddress:
-          "${place.street}, ${place.locality}, ${place.administrativeArea}",
-      street: place.street ?? "",
-      city: place.locality ?? "",
-      state: place.administrativeArea ?? "",
-    );
-
-    setState(() {
-      addressText = addressData.fullAddress;
-    });
-
-    return addressData;
-  }
+  Timer? _debounce;
 
   @override
   void initState() {
     super.initState();
     _getAddress(selectedLocation);
+  }
+
+  @override
+  void dispose() {
+    _debounce?.cancel();
+    super.dispose();
+  }
+
+  Future<AddressData> _getAddress(LatLng pos) async {
+    try {
+      final placemarks =
+      await placemarkFromCoordinates(pos.latitude, pos.longitude);
+
+      final place = placemarks.first;
+
+      final data = AddressData(
+        fullAddress:
+        "${place.street}, ${place.locality}, ${place.administrativeArea}",
+        street: place.street ?? "",
+        city: place.locality ?? "",
+        state: place.administrativeArea ?? "",
+      );
+
+      if (mounted) {
+        setState(() {
+          addressText = data.fullAddress;
+        });
+      }
+
+      return data;
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          addressText = "Unable to detect address";
+        });
+      }
+
+      return AddressData(
+        fullAddress: "",
+        street: "",
+        city: "",
+        state: "",
+      );
+    }
   }
 
   @override
@@ -49,44 +72,65 @@ class _MapPickerScreenState extends State<MapPickerScreen> {
             options: MapOptions(
               initialCenter: selectedLocation,
               initialZoom: 16,
+
+              /// 🔥 DEBOUNCE SOLUTION
               onPositionChanged: (position, _) {
-                if (position.center != null) {
-                  selectedLocation = position.center!;
-                  _getAddress(selectedLocation);
-                }
+                if (position.center == null) return;
+
+                selectedLocation = position.center!;
+
+                _debounce?.cancel();
+                _debounce = Timer(
+                  const Duration(milliseconds: 800),
+                      () {
+                    _getAddress(selectedLocation);
+                  },
+                );
               },
             ),
             children: [
               TileLayer(
-                urlTemplate: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                urlTemplate:
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 userAgentPackageName: 'com.example.app',
               ),
             ],
           ),
 
+          /// 📍 CENTER PIN
           const Center(
-            child: Icon(Icons.location_pin, size: 40, color: Colors.red),
+            child: Icon(
+              Icons.location_pin,
+              size: 40,
+              color: Colors.red,
+            ),
           ),
 
+          /// 📦 ADDRESS CARD
           Positioned(
             bottom: 20,
             left: 16,
             right: 16,
             child: Card(
+              elevation: 4,
               child: Padding(
                 padding: const EdgeInsets.all(12),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(addressText, textAlign: TextAlign.center),
+                    Text(
+                      addressText,
+                      textAlign: TextAlign.center,
+                    ),
                     const SizedBox(height: 8),
                     ElevatedButton(
                       onPressed: () async {
-                        final data = await _getAddress(selectedLocation);
-                        Navigator.pop(
-                          context,
-                          data,
-                        ); // return structured address
+                        final data =
+                        await _getAddress(selectedLocation);
+
+                        if (context.mounted) {
+                          Navigator.pop(context, data);
+                        }
                       },
                       child: const Text("Confirm Location"),
                     ),

@@ -96,12 +96,7 @@ class CartBottomSheet {
                   CustomButton(
                     text: "Check out : AED ${total.toStringAsFixed(2)}",
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const AddressScreen(),
-                        ),
-                      );
+
                     },
                   ),
                 ],

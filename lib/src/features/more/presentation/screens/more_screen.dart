@@ -22,7 +22,7 @@ class MoreScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             buildSectionTitle("Your Shortcuts"),
-            MoreGrid(items: YourShortcuts),
+            MoreGrid(items: getYourShortcuts(context)),
 
             const SizedBox(height: AppSizes.h20),
             buildSectionTitle("Browse"),
@@ -51,21 +51,31 @@ class MoreScreen extends StatelessWidget {
     );
   }
 }
-
-List<MoreItem> YourShortcuts = [
-  MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Manage Profile"),
-  MoreItem(image: "assets/svg/loyalty_discount_icon.svg", title: "My Wallet"),
-  MoreItem(image: "assets/svg/gift_card_logo.svg", title: "Gift Cards"),
-  MoreItem(image: "assets/svg/loyalty_discount_icon.svg", title: "WishLists"),
-  MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Bezat Points"),
-  MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Purchased Orders"),
-  MoreItem(image: "assets/svg/loyalty_icon.svg", title: "My Addresses"),
-  MoreItem(
-    image: "assets/svg/loyalty_discount_icon.svg",
-    title: "VIP Subscription",
-  ),
-  MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Return Orders"),
-];
+List<MoreItem> getYourShortcuts(BuildContext context) {
+  return [
+    MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Manage Profile"),
+    MoreItem(image: "assets/svg/loyalty_discount_icon.svg", title: "My Wallet"),
+    MoreItem(image: "assets/svg/gift_card_logo.svg", title: "Gift Cards"),
+    MoreItem(image: "assets/svg/loyalty_discount_icon.svg", title: "WishLists"),
+    MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Bezat Points"),
+    MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Purchased Orders"),
+    MoreItem(
+      image: "assets/svg/loyalty_icon.svg",
+      title: "My Addresses",
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const AddressScreen()),
+        );
+      },
+    ),
+    MoreItem(
+      image: "assets/svg/loyalty_discount_icon.svg",
+      title: "VIP Subscription",
+    ),
+    MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Return Orders"),
+  ];
+}
 
 List<MoreItem> Browse = [
   MoreItem(image: "assets/svg/all_brands_icon.svg", title: "All Brands"),

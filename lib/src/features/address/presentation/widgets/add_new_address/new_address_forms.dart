@@ -29,21 +29,27 @@ class _NewAddressFormsState extends State<NewAddressForms> {
           onTap: () async {
             final result = await Navigator.push(
               context,
-              MaterialPageRoute(builder: (_) => const MapPickerScreen()),
+              MaterialPageRoute(
+                builder: (_) => const MapPickerScreen(),
+              ),
             );
 
             if (result != null && result is AddressData) {
               setState(() {
-                locationController.text = result.fullAddress;
+                //locationController.text = result.fullAddress;
+                addressNameController.text=result.fullAddress;
                 streetController.text = result.street;
                 cityController.text = result.city;
                 stateController.text = result.state;
               });
             }
           },
-          child: CustomTextField(
-            hint: "Detect Location",
-            controller: locationController,
+          child: AbsorbPointer(
+            absorbing: true,
+            child: CustomTextField(
+              hint: "Detect Location",
+              controller: locationController,
+            ),
           ),
         ),
         CustomLabeledTextfields(

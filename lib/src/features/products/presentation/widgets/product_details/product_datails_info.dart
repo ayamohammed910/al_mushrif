@@ -127,8 +127,7 @@ class _ProductDatailsInfoState extends State<ProductDatailsInfo> {
 
         Container(
           height: AppSizes.h80,
-          width: double.infinity, // full width
-          padding: const EdgeInsets.all(16), // optional padding
+          padding: const EdgeInsets.all(AppSizes.p16),
           decoration: BoxDecoration(
             color: AppColors.white,
             borderRadius: BorderRadius.circular(20),

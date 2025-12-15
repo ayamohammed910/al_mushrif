@@ -1,12 +1,12 @@
 part of '../../../products_imports.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+class CustomSilverAppBar extends StatelessWidget {
   final String imagePath;
   final VoidCallback? onBack;
   final VoidCallback? onFavorite;
   final double height;
 
-  const CustomAppBar({
+  const CustomSilverAppBar({
     super.key,
     required this.imagePath,
     this.onBack,
@@ -16,26 +16,22 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PreferredSize(
-      preferredSize: Size.fromHeight(height),
-      child: AppBar(
-        backgroundColor: AppColors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: AppColors.black),
-          onPressed: onBack ?? () => Navigator.pop(context),
-        ),
-        centerTitle: true,
-        title: null,
-        flexibleSpace: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(imagePath, height: height - 100, fit: BoxFit.cover),
-          ],
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: AppSizes.p16),
+    return SliverAppBar(
+      expandedHeight: height,
+      pinned: true,
+      backgroundColor: AppColors.white,
+      elevation: 0,
+
+      leading: IconButton(
+        icon: const Icon(Icons.arrow_back, color: AppColors.black),
+        onPressed: onBack ?? () => Navigator.pop(context),
+      ),
+
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: AppSizes.p16),
+          child: GestureDetector(
+            onTap: onFavorite,
             child: Container(
               width: AppSizes.w32,
               height: AppSizes.h32,
@@ -47,26 +43,21 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   width: 1,
                 ),
               ),
-              child: InkWell(
-                borderRadius: BorderRadius.circular(
-                  12,
-                ),
-                onTap: onFavorite,
-                child: Center(
-                  child: SvgPicture.asset(
-                    "assets/svg/empty_fav_icon.svg",
-                    width: AppSizes.w16,
-                    height: AppSizes.h16,
-                  ),
+              child: Center(
+                child: SvgPicture.asset(
+                  "assets/svg/empty_fav_icon.svg",
+                  width: AppSizes.w16,
+                  height: AppSizes.h16,
                 ),
               ),
             ),
           ),
-        ],
+        ),
+      ],
+
+      flexibleSpace: FlexibleSpaceBar(
+        background: Image.asset(imagePath, fit: BoxFit.cover),
       ),
     );
   }
-
-  @override
-  Size get preferredSize => Size.fromHeight(height);
 }
