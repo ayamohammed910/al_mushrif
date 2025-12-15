@@ -2,6 +2,59 @@
 last review points
 
 
+
+
+# more_screen.dart
+ add address list page navigator function to the short cut item
+ 
+
+
+# new_address_form.dart
+onTap on text field did not work
+ خلى ال textFiled جوا AbsorbPointer و خلى absorb ب true
+
+# map_picker_widget.dart
+الماب بتضرب 
+
+لو ما عرفتيش تحليها جربى تستعملى GoogleMpa بدل Flutter Map
+
+ add this in android manifest inside application tag
+ android:hardwareAccelerated="true"
+ <meta-data
+ android:name="com.google.android.geo.API_KEY"
+ android:value="AIzaSyBndNTAgAxPYhF2QxY4rxC9x7v1GKNp1W0" />
+دا علشان ال map تظهر 
+
+ # product_details
+use customScrollView to apply sliver app bar 
+
+# product_details_info.dart >> line 128 
+ remove width: double.infinity  
+ال row بياخد كل المساحه المتاحه بالطول
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # filter_side_menu.dart
 wrap singleChild with Column then wrap with expanded below expanded the buttons "confirm" and reset 
 خلى ال singleChild جوا Column و بعدها خلى ال singleChild ف expanded و تحت ال expanded ضيفى ال row الى فيه ال buttons 
@@ -172,10 +225,4 @@ int selectedIndex = 0 ;
 # forget_password_body.dart
 ما ينفعش ناخد object جوا ال build method 
 بيتنادى عليها اكتر من مره و فى كل مره بيتعمل object جديد 
-خليها stateFullWidget بدل stateLess
-بدل ال Align نستعمل ال cross axis alignment ف ال column
-
-
-
-
-
+خليها stateFullWidget بدل st

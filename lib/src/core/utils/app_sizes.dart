@@ -22,6 +22,7 @@ class AppSizes {
   // Height sizes
   static const double h2 = 2;
   static const double h4 = 4;
+  static const double h5 = 5;
   static const double h8 = 8;
   static const double h10 = 10;
   static const double h12 = 12;

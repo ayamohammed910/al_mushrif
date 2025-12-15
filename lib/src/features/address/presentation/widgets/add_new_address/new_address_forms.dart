@@ -75,7 +75,7 @@ class _NewAddressFormsState extends State<NewAddressForms> {
         const SizedBox(height: AppSizes.h10),
 
         GestureDetector(
-          onTap: _openAddressTypeSheet,
+          onTap: ()=> _openAddressTypeSheet(),
           child: Container(
             height: AppSizes.h50,
             width: double.infinity,
