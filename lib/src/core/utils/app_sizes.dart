@@ -44,11 +44,12 @@ class AppSizes {
   static const double h160 = 160;
   static const double h200 = 200;
   static const double h270 = 270;
-
+  static const double h300 = 300;
   static const double h400 = 400;
 
 
   // Width sizes
+  static const double w2 = 2;
   static const double w4 = 4;
   static const double w8 = 8;
   static const double w10 = 10;

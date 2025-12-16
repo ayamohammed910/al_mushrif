@@ -12,7 +12,10 @@ class MoreScreen extends StatelessWidget {
         title: Center(
           child: const CustomText(
             "More",
-            textStyle: TextStyle(fontSize: AppSizes.fs20, fontWeight: FontWeight.bold),
+            textStyle: TextStyle(
+              fontSize: AppSizes.fs20,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),
@@ -46,11 +49,15 @@ class MoreScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: AppSizes.p8),
       child: Text(
         title,
-        style: const TextStyle(fontSize: AppSizes.fs18, fontWeight: FontWeight.bold),
+        style: const TextStyle(
+          fontSize: AppSizes.fs18,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }
 }
+
 List<MoreItem> getYourShortcuts(BuildContext context) {
   return [
     MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Manage Profile"),
@@ -73,7 +80,16 @@ List<MoreItem> getYourShortcuts(BuildContext context) {
       image: "assets/svg/loyalty_discount_icon.svg",
       title: "VIP Subscription",
     ),
-    MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Return Orders"),
+    MoreItem(
+      image: "assets/svg/loyalty_icon.svg",
+      title: "My Orders",
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const OrdersScreen()),
+        );
+      },
+    ),
   ];
 }
 

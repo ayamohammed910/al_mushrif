@@ -122,7 +122,6 @@ class _ProductDatailsInfoState extends State<ProductDatailsInfo> {
 
         const SizedBox(height: 10),
 
-
         Container(
           height: AppSizes.h80,
           padding: const EdgeInsets.all(AppSizes.p16),
