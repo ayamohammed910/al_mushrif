@@ -40,7 +40,7 @@ class OrderInfoCard extends StatelessWidget {
             ],
           ),
           const Divider(),
-          RowOrderInfo(data: order.date + "  " + order.time, title: 'Date: '),
+          RowOrderInfo(data: "${order.date}  ${order.time}", title: 'Date: '),
           SizedBox(height: AppSizes.h4),
           RowOrderInfo(data: order.status, title: 'Status: '),
           SizedBox(height: AppSizes.h4),

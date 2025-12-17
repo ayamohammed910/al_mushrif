@@ -51,6 +51,7 @@ class AppSizes {
   // Width sizes
   static const double w2 = 2;
   static const double w4 = 4;
+  static const double w5 = 5;
   static const double w8 = 8;
   static const double w10 = 10;
   static const double w12 = 12;

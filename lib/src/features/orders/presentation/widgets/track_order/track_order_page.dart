@@ -14,7 +14,6 @@ class TrackOrderPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              width: double.infinity,
               padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
               decoration: BoxDecoration(
                 color: AppColors.white,

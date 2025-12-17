@@ -3,6 +3,52 @@ last review points
 
 
 
+# orders and product details 
+مفيش اخطاء او حجات عايزه تتعدل كله تمام...
+
+# map_picker_widget.dart
+1. flutter_map: ^7.0.0
+     latlong2: ^0.9.1
+مش نحتاج الاتنين دول
+2. استخدمى flutter_google_mpa package >> لو هتستعملى الاستاك خلى الماب جوا sizedBox واخدارتفاع و عرض الشاشه كلها ب ال MediQuery
+   width: MediaQuery.sizeOf(context).width,
+   height: MediaQuery.sizeOf(context).height,
+3. انا ضفت ال map_api key ف فايل ال AndroidManifest.xml
+4. in android folder >> app  >> build.gradel.kts
+غيرى ال minSdk جوا defaultConfig ل 21
+5. رنى من الاول او امسحى التطبيق ورنى من الاول
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # more_screen.dart
  add address list page navigator function to the short cut item

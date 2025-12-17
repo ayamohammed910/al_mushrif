@@ -20,8 +20,8 @@ class OrderStatusTile extends StatelessWidget {
         Column(
           children: [
             Container(
-              height: AppSizes.h32,
-              width: AppSizes.w32,
+              height: AppSizes.h40,
+              width: AppSizes.w40,
               decoration: const BoxDecoration(
                 color: AppColors.primary,
                 shape: BoxShape.circle,
@@ -29,12 +29,12 @@ class OrderStatusTile extends StatelessWidget {
               child: const Icon(
                 Icons.check_circle_outline_sharp,
                 color: Colors.white,
-                size: 16,
+                size: 25,
               ),
             ),
             if (!isLast)
               Container(
-                width: AppSizes.w2,
+                width: AppSizes.w4,
                 height: AppSizes.h80,
                 color: AppColors.primary,
               ),
