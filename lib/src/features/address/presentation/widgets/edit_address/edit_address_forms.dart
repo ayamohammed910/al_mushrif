@@ -56,7 +56,7 @@ class _EditAddressFormsState extends State<EditAddressForms> {
           onTap: () async {
             final result = await Navigator.push(
               context,
-              MaterialPageRoute(builder: (_) => const MapPickerScreen()),
+              MaterialPageRoute(builder: (_) => const MapPickerWidget()),
             );
 
             if (result != null && result is AddressData) {

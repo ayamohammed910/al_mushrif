@@ -8,9 +8,8 @@ import 'package:al_mushrif/src/core/widgets/custom_labeled_textfields.dart';
 import 'package:al_mushrif/src/core/widgets/custom_text.dart';
 import 'package:al_mushrif/src/core/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_map/flutter_map.dart';
 import 'package:geocoding/geocoding.dart';
-import 'package:latlong2/latlong.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 part 'presentation/screens/address_screen.dart';
 part 'presentation/widgets/add_new_address/map_picker_widget.dart';

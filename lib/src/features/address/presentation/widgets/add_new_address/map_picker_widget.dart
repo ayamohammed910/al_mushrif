@@ -1,16 +1,16 @@
 part of '../../../address_imports.dart';
-class MapPickerScreen extends StatefulWidget {
-  const MapPickerScreen({super.key});
+class MapPickerWidget extends StatefulWidget {
+  const MapPickerWidget({super.key});
 
   @override
-  State<MapPickerScreen> createState() => _MapPickerScreenState();
+  State<MapPickerWidget> createState() => _MapPickerWidgetState();
 }
 
-class _MapPickerScreenState extends State<MapPickerScreen> {
+class _MapPickerWidgetState extends State<MapPickerWidget> {
   LatLng selectedLocation = const LatLng(30.0444, 31.2357); // Cairo
   String addressText = "Detecting address...";
-
   Timer? _debounce;
+  GoogleMapController? mapController;
 
   @override
   void initState() {
@@ -64,20 +64,26 @@ class _MapPickerScreenState extends State<MapPickerScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
+
     return Scaffold(
       appBar: AppBar(title: const Text("Select Location")),
       body: Stack(
         children: [
-          FlutterMap(
-            options: MapOptions(
-              initialCenter: selectedLocation,
-              initialZoom: 16,
-
-              /// 🔥 DEBOUNCE SOLUTION
-              onPositionChanged: (position, _) {
-                if (position.center == null) return;
-
-                selectedLocation = position.center!;
+          /// 🗺️ GOOGLE MAP (FULL SCREEN)
+          SizedBox(
+            width: size.width,
+            height: size.height,
+            child: GoogleMap(
+              initialCameraPosition: CameraPosition(
+                target: selectedLocation,
+                zoom: 16,
+              ),
+              onMapCreated: (controller) {
+                mapController = controller;
+              },
+              onCameraMove: (position) {
+                selectedLocation = position.target;
 
                 _debounce?.cancel();
                 _debounce = Timer(
@@ -87,14 +93,9 @@ class _MapPickerScreenState extends State<MapPickerScreen> {
                   },
                 );
               },
+              myLocationEnabled: true,
+              myLocationButtonEnabled: true,
             ),
-            children: [
-              TileLayer(
-                urlTemplate:
-                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-                userAgentPackageName: 'com.example.app',
-              ),
-            ],
           ),
 
           /// 📍 CENTER PIN

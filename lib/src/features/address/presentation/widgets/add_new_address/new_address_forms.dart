@@ -30,7 +30,7 @@ class _NewAddressFormsState extends State<NewAddressForms> {
             final result = await Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => const MapPickerScreen(),
+                builder: (_) => const MapPickerWidget(),
               ),
             );
 
