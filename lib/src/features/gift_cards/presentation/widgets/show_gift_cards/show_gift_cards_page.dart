@@ -30,7 +30,23 @@ class ShowGiftCardsPage extends StatelessWidget {
               child: ListView.builder(
                 itemCount: giftOffers.length,
                 itemBuilder: (context, index) {
-                  return GiftCardItem(model: giftOffers[index]);
+                  return NewOffersItem(
+                    model: giftOffers[index],
+                    footer: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Divider(color: AppColors.black, thickness: 0.8),
+                        const SizedBox(height: AppSizes.h10),
+                        CustomText(
+                          'Valid for ${giftOffers[index].days} Days',
+                          textStyle: const TextStyle(
+                            fontSize: AppSizes.fs14,
+                            color: AppColors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
                 },
               ),
             ),

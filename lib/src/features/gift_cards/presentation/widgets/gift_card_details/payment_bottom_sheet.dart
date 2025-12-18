@@ -78,6 +78,12 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
             },
           ),
           const SizedBox(height: AppSizes.h20),
+          CustomButton(
+            text: 'Process Payment',
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
         ],
       ),
     );
