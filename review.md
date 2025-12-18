@@ -2,6 +2,41 @@
 last review points
 
 
+ # gift_card_widget.dart
+استعملى نفس ال card ف صفحه ال giftCards و my gift cards
+
+# SubscriberGiftCardDetails page
+زودى bool اذا كانت ال gift card خاصه ب اليوزر ولا لا 
+bool isMyGiftCard 
+لو ب true تظرى الباركود و الكوبون و تغيرى ال title 
+false >> نفس التفاصيل من غير الباركود و الكوبون و زرار الدفع
+
+# payment_bottom_sheet.dart
+لما يكون فى طريقه دفع select زرزا process payment يكون ظاهر 
+زودى دا
+
+
+# gift_card_widget.dart 
+line 14
+شيلى ال width
+line 82
+شيلى ال padding و استعملى margin جوا ال container 
+خلى الصوره cover 
+شيلى ال width
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # orders and product details 
 مفيش اخطاء او حجات عايزه تتعدل كله تمام...
@@ -19,32 +54,6 @@ last review points
 غيرى ال minSdk جوا defaultConfig ل 21
 5. رنى من الاول او امسحى التطبيق ورنى من الاول
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -87,53 +96,12 @@ use customScrollView to apply sliver app bar
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # filter_side_menu.dart
 wrap singleChild with Column then wrap with expanded below expanded the buttons "confirm" and reset 
 خلى ال singleChild جوا Column و بعدها خلى ال singleChild ف expanded و تحت ال expanded ضيفى ال row الى فيه ال buttons 
 دا هيخليهم ف الاخر و بقيه الديزاين يسكرول عادى
 
 مفيش داعى ل container و نديله width ال row كدا كدا هيخليه ياخد ال width كله
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -199,31 +167,6 @@ floatActionButton not the same as in Screen
 
 primaryColor >> Color(0xFFC6161D)
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

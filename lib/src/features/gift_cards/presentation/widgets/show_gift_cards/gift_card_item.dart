@@ -13,13 +13,6 @@ class GiftCardItem extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
-        boxShadow: const [
-          BoxShadow(
-            color: AppColors.grey,
-            blurRadius: 8,
-            offset: const Offset(0, 4),
-          ),
-        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,9 +24,7 @@ class GiftCardItem extends StatelessWidget {
                 height: AppSizes.h50,
                 width: AppSizes.w50,
               ),
-
               const SizedBox(width: AppSizes.w12),
-
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

@@ -3,7 +3,7 @@ part of '../../../gift_cards_imports.dart';
 class GiftCardWidget extends StatelessWidget {
   final GiftModel model;
 
-  const GiftCardWidget({required this.model});
+  const GiftCardWidget({super.key, required this.model});
 
   @override
   Widget build(BuildContext context) {

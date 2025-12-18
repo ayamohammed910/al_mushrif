@@ -1,7 +1,13 @@
 part of '../../gift_cards_imports.dart';
 
-class GiftCardsScreen extends StatelessWidget {
-  GiftCardsScreen({super.key});
+class GiftCardsScreen extends StatefulWidget {
+  const GiftCardsScreen({super.key});
+
+  @override
+  State<GiftCardsScreen> createState() => _GiftCardsScreenState();
+}
+
+class _GiftCardsScreenState extends State<GiftCardsScreen> {
   final List<GiftModel> giftOffers = [
     const GiftModel(
       title: 'National Day 54',
@@ -16,6 +22,7 @@ class GiftCardsScreen extends StatelessWidget {
       subscriber: false,
     ),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,27 +60,10 @@ class GiftCardsScreen extends StatelessWidget {
                 itemCount: giftOffers.length,
                 itemBuilder: (context, index) {
                   final item = giftOffers[index];
-
-                  return InkWell(onTap: (){
-                    if(item.subscriber)
-                      {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => SubscriberGiftCardDetails(model: item),
-                          ),
-                        );
-                      }
-                    else{
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => UnsubscriberGiftCardDetails(model: item),
-                        ),
-                      );
-                    }
-                  },
-                      child: NewOffersItem(model: giftOffers[index]));
+                  return InkWell(
+                    onTap: () => onPress(item, context),
+                    child: NewOffersItem(model: giftOffers[index]),
+                  );
                 },
               ),
             ),
@@ -81,5 +71,25 @@ class GiftCardsScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+
+  ///ُTODO ??!..details ليه صفحتين
+  void onPress(GiftModel item, BuildContext context) {
+    if (item.subscriber) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => SubscriberGiftCardDetails(model: item),
+        ),
+      );
+    } else {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => UnsubscriberGiftCardDetails(model: item),
+        ),
+      );
+    }
   }
 }
