@@ -8,6 +8,9 @@ class AppSizes {
   static const double p16 = 16;
   static const double p20 = 20;
   static const double p24 = 24;
+  static const double p60 = 60;
+  static const double p80 = 80;
+
 
   // Font sizes
   static const double fs10 = 10;
@@ -17,6 +20,8 @@ class AppSizes {
   static const double fs18 = 18;
   static const double fs20 = 20;
   static const double fs24 = 24;
+  static const double fs26 = 26;
+
 
 
   // Height sizes
@@ -70,5 +75,6 @@ class AppSizes {
   static const double w120 = 120;
   static const double w160 = 160;
   static const double w200 = 200;
+  static const double w250 = 250;
 
 }

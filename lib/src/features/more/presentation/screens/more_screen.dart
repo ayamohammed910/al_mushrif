@@ -62,7 +62,12 @@ List<MoreItem> getYourShortcuts(BuildContext context) {
   return [
     MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Manage Profile"),
     MoreItem(image: "assets/svg/loyalty_discount_icon.svg", title: "My Wallet"),
-    MoreItem(image: "assets/svg/gift_card_logo.svg", title: "Gift Cards"),
+    MoreItem(image: "assets/svg/gift_card_logo.svg", title: "Gift Cards",onTap: (){
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) =>  GiftCardsScreen()),
+      );
+    }),
     MoreItem(image: "assets/svg/loyalty_discount_icon.svg", title: "WishLists"),
     MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Bezat Points"),
     MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Purchased Orders"),
