@@ -1,4 +1,8 @@
-part of '../../../gift_cards_imports.dart';
+
+import 'package:al_mushrif/src/core/utils/app_colors.dart';
+import 'package:al_mushrif/src/core/utils/app_sizes.dart';
+import 'package:al_mushrif/src/core/widgets/custom_text.dart';
+import 'package:flutter/material.dart';
 
 class PaymentCard extends StatelessWidget {
   final String title;

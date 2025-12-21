@@ -1,4 +1,5 @@
 part of '../../offers_imports.dart';
+
 class VipOffersTab extends StatelessWidget {
   const VipOffersTab({super.key});
 
@@ -9,7 +10,15 @@ class VipOffersTab extends StatelessWidget {
         // Banner
         Padding(
           padding: const EdgeInsets.all(AppSizes.p8),
-          child: CustomVipCard(order: "Subscribe Now",onTap: (){},),
+          child: CustomVipCard(
+            order: "Subscribe Now",
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) =>  VipOffers()),
+              );
+            },
+          ),
         ),
 
         // Grid of offers

@@ -84,6 +84,12 @@ List<MoreItem> getYourShortcuts(BuildContext context) {
     MoreItem(
       image: "assets/svg/loyalty_discount_icon.svg",
       title: "VIP Subscription",
+      onTap: (){
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const VipMembershipScreen()),
+        );
+      }
     ),
     MoreItem(
       image: "assets/svg/loyalty_icon.svg",

@@ -1,0 +1,19 @@
+import 'package:al_mushrif/src/core/utils/app_colors.dart';
+import 'package:al_mushrif/src/core/utils/app_sizes.dart';
+import 'package:al_mushrif/src/core/widgets/custom_appBar.dart';
+import 'package:al_mushrif/src/core/widgets/custom_button.dart';
+import 'package:al_mushrif/src/core/widgets/custom_elevated_button.dart';
+import 'package:al_mushrif/src/core/widgets/custom_outLine_button.dart';
+import 'package:al_mushrif/src/core/widgets/custom_text.dart';
+import 'package:al_mushrif/src/core/widgets/payment_bottom_sheet.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+part 'presentation/screens/vip_member_ship_screen.dart';
+part 'presentation/widgets/vip_member_ship_widget/vip_member_ship_card.dart';
+part 'presentation/widgets/vip_offers/vip_offers.dart';
+part 'presentation/widgets/vip_offers/save_money_vip.dart';
+part 'presentation/widgets/vip_offers/vip_info.dart';
+part 'presentation/widgets/vip_offers/benfits_offers.dart';
+part 'presentation/widgets/vip_bottom_sheet/vip_bottom_sheet.dart';
+part 'presentation/widgets/vip_bottom_sheet/member_ship_item.dart';
