@@ -6,11 +6,11 @@ class MembershipItem extends StatelessWidget {
   final ValueChanged<int> onChanged;
 
   const MembershipItem({
-    Key? key,
+    super.key,
     required this.model,
     required this.selectedValue,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

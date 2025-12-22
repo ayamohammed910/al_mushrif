@@ -41,7 +41,7 @@ class _PaymentBottomSheetState extends State<PaymentBottomSheet> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Spacer(),
+              Spacer(flex: 2,),
               const CustomText(
                 "Select payment method",
                 textStyle: TextStyle(

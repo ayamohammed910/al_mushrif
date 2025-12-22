@@ -23,7 +23,7 @@ class MembershipCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppSizes.p16),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
           color: isSelected ? AppColors.primary : Colors.transparent,

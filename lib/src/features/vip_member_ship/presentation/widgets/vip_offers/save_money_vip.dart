@@ -8,7 +8,6 @@ class SaveMoneyVip extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         Container(
-          width: double.infinity,
           padding: const EdgeInsets.fromLTRB(20, 40, 20, 20),
           decoration: BoxDecoration(
             color: AppColors.primary,
@@ -44,15 +43,14 @@ class SaveMoneyVip extends StatelessWidget {
           ),
         ),
 
-        // Floating Icon (Half Outside)
         Positioned(
-          top: -45,
+          top: -70,
           left: 0,
           right: 0,
           child: Center(
             child: SvgPicture.asset(
               "assets/svg/vip_icon.svg",
-              height: 100,
+              height: 120,
             ),
           ),
         ),
@@ -64,6 +62,7 @@ void showVipMembershipBottomSheet(BuildContext context) {
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,
+    enableDrag: false,
     backgroundColor: Colors.transparent,
     builder: (_) => const VipBottomSheet(),
   );

@@ -89,12 +89,12 @@ class GiftCardWidget extends StatelessWidget {
                   margin: const EdgeInsets.all(AppSizes.p12),
                   decoration: BoxDecoration(
                     color: AppColors.white,
-                    borderRadius: BorderRadius.circular(12),
                   ),
                   alignment: Alignment.center,
                   child: Image.asset(
                     'assets/png/barcode.png',
                     fit: BoxFit.cover,
+                    width: 280,
                   ),
                 ),
 

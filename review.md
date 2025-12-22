@@ -2,6 +2,15 @@
 last review points
 
 
+# vip_bottom_sheet.dart
+
+شيلى ال singleChild و خلى ال padding جوا ال listView وتكون بتسكرول عادى
+
+
+
+
+
+
  # gift_card_widget.dart
 استعملى نفس ال card ف صفحه ال giftCards و my gift cards
 

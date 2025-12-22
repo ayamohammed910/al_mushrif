@@ -1,7 +1,7 @@
 part of '../../../vip_member_ship_imports.dart';
 
 class VipOffers extends StatelessWidget {
-  VipOffers({Key? key}) : super(key: key);
+  const VipOffers({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class VipOffers extends StatelessWidget {
           children: [
             Center(
               child: Image.asset(
-                'assets/png/loading_logo.png',
+                'assets/png/new_auth_logo.png',
                 height: AppSizes.h120,
               ),
             ),

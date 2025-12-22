@@ -97,7 +97,6 @@ class _VipMembershipScreenState extends State<VipMembershipScreen> {
               ),
             ),
             const SizedBox(height: AppSizes.h12),
-
             ListView.builder(
               itemCount: otherPlans.length,
               shrinkWrap: true,
@@ -105,7 +104,6 @@ class _VipMembershipScreenState extends State<VipMembershipScreen> {
               itemBuilder: (context, index) {
                 final plan = otherPlans[index];
                 final bool isSelected = selectedIndex == index;
-
                 return Padding(
                   padding: const EdgeInsets.only(bottom: AppSizes.h16),
                   child: GestureDetector(
@@ -124,18 +122,14 @@ class _VipMembershipScreenState extends State<VipMembershipScreen> {
                 );
               },
             ),
-
             const SizedBox(height: AppSizes.h8),
-
             CustomButton(
               text: 'Change Plan',
               color: selectedIndex != null
                   ? AppColors.primary
                   : AppColors.lightRed,
               onPressed: selectedIndex != null
-                  ? () {
-                showPaymentBottomSheet(context);
-                    }
+                  ? () => showPaymentBottomSheet(context)
                   : () {},
             ),
           ],
@@ -147,6 +141,7 @@ class _VipMembershipScreenState extends State<VipMembershipScreen> {
     showModalBottomSheet(
       context: context,
       isScrollControlled: false,
+      enableDrag: false,
       backgroundColor: Colors.transparent,
       builder: (context) {
         return const PaymentBottomSheet();

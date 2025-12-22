@@ -68,6 +68,7 @@ class _VipBottomSheetState extends State<VipBottomSheet> {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
             child: Row(
               children: [
+                ///TODO make flex 4
                 const Spacer(),
                 const CustomText(
                   "VIP Membership",
@@ -76,6 +77,7 @@ class _VipBottomSheetState extends State<VipBottomSheet> {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
+                ///TODO make flex 3
                 const Spacer(),
                 GestureDetector(
                   onTap: () => Navigator.pop(context),
