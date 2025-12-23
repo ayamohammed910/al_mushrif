@@ -17,3 +17,7 @@ part 'presentation/widgets/orders_details/fees_bottom_sheet.dart';
 part 'presentation/widgets/orders_details/row_order_info.dart';
 part 'presentation/widgets/orders_details/invoice_row.dart';
 part 'presentation/widgets/track_order/OrderStatusTile.dart';
+part 'presentation/widgets/order_summary/order_summary_page.dart';
+part 'presentation/widgets/order_summary/order_card.dart';
+part 'presentation/widgets/order_summary/product_card.dart';
+part 'presentation/widgets/order_summary/info_row.dart';

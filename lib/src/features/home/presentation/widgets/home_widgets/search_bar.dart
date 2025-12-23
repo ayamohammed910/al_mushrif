@@ -1,4 +1,4 @@
-part of '../../home_imports.dart';
+part of '../../../home_imports.dart';
 
 class SearchBar extends StatelessWidget {
   final ValueChanged<String>? onSearchChanged;
@@ -43,7 +43,12 @@ class SearchBar extends StatelessWidget {
 
         Padding(
           padding: const EdgeInsets.all(16.0),
-          child: SvgPicture.asset("assets/svg/notification.svg"),
+          child: InkWell(onTap: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) =>  NotificationsPage()),
+            );
+          },child: SvgPicture.asset("assets/svg/notification.svg")),
         ),
       ],
     );

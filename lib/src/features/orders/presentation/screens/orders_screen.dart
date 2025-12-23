@@ -1,4 +1,5 @@
 part of '../../orders_imports.dart';
+
 class OrdersScreen extends StatefulWidget {
   const OrdersScreen({super.key});
 
@@ -13,10 +14,30 @@ class _OrdersScreenState extends State<OrdersScreen> {
   void initState() {
     super.initState();
     orders = [
-      OrderModel(id: "20251214-14402769", date: "14 Dec 2025", time: "02:40 PM", status: "Pending"),
-      OrderModel(id: "20251211-16174883", date: "11 Dec 2025", time: "04:17 PM", status: "Cancelled"),
-      OrderModel(id: "20251211-00330394", date: "11 Dec 2025", time: "12:33 AM", status: "Cancelled"),
-      OrderModel(id: "20251214-14402769", date: "14 Dec 2025", time: "02:40 PM", status: "Pending"),
+      OrderModel(
+        id: "20251214-14402769",
+        date: "14 Dec 2025",
+        time: "02:40 PM",
+        status: "Pending",
+        customerName: "user test1",
+        email: "darksideuxais@gmail.com",
+        shippingAddress: "vijfug, Abu Dhabi",
+        totalAmount: 123.17,
+        shippingMethod: "Flat shipping rate",
+        paymentMethod: "Wallet",
+      ),
+      OrderModel(
+        id: "20251211-16174883",
+        date: "11 Dec 2025",
+        time: "04:17 PM",
+        status: "Cancelled",
+        customerName: "user test1",
+        email: "darksideuxais@gmail.com",
+        shippingAddress: "Abu Dhabi",
+        totalAmount: 45.00,
+        shippingMethod: "Flat shipping rate",
+        paymentMethod: "Wallet",
+      ),
     ];
   }
 
@@ -27,6 +48,12 @@ class _OrdersScreenState extends State<OrdersScreen> {
         date: orders[index].date,
         time: orders[index].time,
         status: newStatus,
+        customerName: orders[index].customerName,
+        email: orders[index].email,
+        shippingAddress: orders[index].shippingAddress,
+        totalAmount: orders[index].totalAmount,
+        shippingMethod: orders[index].shippingMethod,
+        paymentMethod: orders[index].paymentMethod,
       );
     });
   }
@@ -54,14 +81,16 @@ class _OrdersScreenState extends State<OrdersScreen> {
                   );
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('You can only view pending orders')),
+                    const SnackBar(
+                      content: Text('You can only view pending orders'),
+                    ),
                   );
                 }
               },
               child: OrderItemWidget(
                 order: order,
                 onReorder: () {
-                  updateOrderStatus(index, "Pending"); // نحدث الحالة في المصدر
+                  updateOrderStatus(index, "Pending");
                 },
               ),
             ),

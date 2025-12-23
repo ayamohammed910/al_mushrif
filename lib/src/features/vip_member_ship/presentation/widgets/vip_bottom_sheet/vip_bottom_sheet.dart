@@ -19,12 +19,12 @@ class _VipBottomSheetState extends State<VipBottomSheet> {
       value: 0,
       benefits: [
         "The Ultimate Convenience & Rewards Experience",
-        "10% Instant Cashback: The highest reward level. cashback applied instantly at checkout on every purchase—no waiting!",
-        "Unlimited Free Delivery: Never pay a delivery fee again.Enjoy ultimate convenience on all your orders.",
-        "Shareholders-Only Special Promotions: Get first and exclusive access to our best deals, luxury items, and limited-time offers.",
-        "All Executive Benefits: Including Exclusive Discounts, Early Access, Bonus Bezat Points, and Premium Offers.",
-        "Who is it for? Designed for AMCOOP Shareholders.",
-        "NB: The Shareholders benefits apply for purchases from Al Mushrif Coop only and not from other sellers on theAMCOOP application.",
+        "10% Instant Cashback",
+        "Unlimited Free Delivery",
+        "Shareholders-Only Special Promotions",
+        "All Executive Benefits",
+        "Designed for AMCOOP Shareholders",
+        "Benefits apply for Al Mushrif Coop only",
       ],
     ),
     MembershipModel(
@@ -63,12 +63,10 @@ class _VipBottomSheetState extends State<VipBottomSheet> {
       ),
       child: Column(
         children: [
-          /// HEADER
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
             child: Row(
               children: [
-                ///TODO make flex 4
                 const Spacer(),
                 const CustomText(
                   "VIP Membership",
@@ -77,7 +75,6 @@ class _VipBottomSheetState extends State<VipBottomSheet> {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                ///TODO make flex 3
                 const Spacer(),
                 GestureDetector(
                   onTap: () => Navigator.pop(context),
@@ -88,29 +85,25 @@ class _VipBottomSheetState extends State<VipBottomSheet> {
           ),
 
           Expanded(
-            child: SingleChildScrollView(
+            child: ListView.builder(
               padding: const EdgeInsets.all(16),
-              child: ListView.builder(
-                itemCount: membershipPlans.length,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  final model = membershipPlans[index];
-                  return MembershipItem(
-                    model: model,
-                    selectedValue: selectedPlan,
-                    onChanged: (v) {
-                      setState(() => selectedPlan = v);
-                    },
-                  );
-                },
-              ),
+              itemCount: membershipPlans.length,
+              itemBuilder: (context, index) {
+                final model = membershipPlans[index];
+                return MembershipItem(
+                  model: model,
+                  selectedValue: selectedPlan,
+                  onChanged: (v) {
+                    setState(() => selectedPlan = v);
+                  },
+                );
+              },
             ),
           ),
 
           Container(
             padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(color: AppColors.ScafoldBackground),
+            color: AppColors.ScafoldBackground,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -148,9 +141,11 @@ class _VipBottomSheetState extends State<VipBottomSheet> {
                 ),
                 CustomButton(
                   text: "Continue To Payment",
-                  onPressed: agree ? () {
-                    showPaymentBottomSheet(context);
-                  } : null,
+                  onPressed: agree
+                      ? () {
+                          showPaymentBottomSheet(context);
+                        }
+                      : null,
                 ),
               ],
             ),
@@ -160,15 +155,13 @@ class _VipBottomSheetState extends State<VipBottomSheet> {
     );
   }
 }
+
 void showPaymentBottomSheet(BuildContext context) {
   showModalBottomSheet(
     context: context,
-    isScrollControlled: false,
     backgroundColor: Colors.transparent,
     builder: (context) {
       return const PaymentBottomSheet();
     },
   );
 }
-
-

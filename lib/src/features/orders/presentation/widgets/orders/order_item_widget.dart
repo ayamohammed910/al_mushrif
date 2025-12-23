@@ -92,11 +92,23 @@ class OrderModel {
   final String date;
   final String time;
   final String status;
+  final String customerName;
+  final String email;
+  final String shippingAddress;
+  final double totalAmount;
+  final String shippingMethod;
+  final String paymentMethod;
 
   OrderModel({
     required this.id,
     required this.date,
     required this.time,
     required this.status,
+    required this.customerName,
+    required this.email,
+    required this.shippingAddress,
+    required this.totalAmount,
+    required this.shippingMethod,
+    required this.paymentMethod,
   });
 }

@@ -1,4 +1,4 @@
-part of '../../home_imports.dart';
+part of '../../../home_imports.dart';
 class Bannar extends StatelessWidget {
   const Bannar({super.key});
 

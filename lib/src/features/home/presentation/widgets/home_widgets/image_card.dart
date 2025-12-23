@@ -1,4 +1,4 @@
-part of '../../home_imports.dart';
+part of '../../../home_imports.dart';
 
 class ImageCard extends StatelessWidget {
   final String imagePath;
