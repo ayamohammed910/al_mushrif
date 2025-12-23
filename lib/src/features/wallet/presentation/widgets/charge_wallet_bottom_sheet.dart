@@ -10,7 +10,7 @@ class ChargeWalletBottomSheet extends StatefulWidget {
 
 class _ChargeWalletBottomSheetState extends State<ChargeWalletBottomSheet> {
   String? selectedPaymentMethod;
-  final TextEditingController amount_controller = TextEditingController();
+  final TextEditingController amountController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class _ChargeWalletBottomSheetState extends State<ChargeWalletBottomSheet> {
             const SizedBox(height: AppSizes.h8),
             CustomTextField(
               hint: "Enter Amount",
-              controller: amount_controller,
+              controller: amountController,
             ),
 
             const SizedBox(height: AppSizes.h16),

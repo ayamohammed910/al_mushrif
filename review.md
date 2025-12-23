@@ -2,12 +2,42 @@
 last review points
 
 
+
+# wallet_balance_card.dart
+شيلى ال width
+و بدالها  alignment: Alignment.center,
+
+
+
+# charge_wallet_bottom_sheet.dart and bezt_points_balance.dart
+لما بفتح الكيبورد بيغطى على ال bottom sheet
+خلى ال bottom sheet يترفع كله لما الكيبورد تتفتح
+
+# wallet_screen.dart
+خليها stateful
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # vip_bottom_sheet.dart
 
 شيلى ال singleChild و خلى ال padding جوا ال listView وتكون بتسكرول عادى
-
-
-
 
 
 

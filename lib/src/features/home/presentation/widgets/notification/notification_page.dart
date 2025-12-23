@@ -1,7 +1,7 @@
 part of '../../../home_imports.dart';
 
 class NotificationsPage extends StatefulWidget {
-  NotificationsPage({super.key});
+  const NotificationsPage({super.key});
 
   @override
   State<NotificationsPage> createState() => _NotificationsPageState();
@@ -74,7 +74,6 @@ class _NotificationsPageState extends State<NotificationsPage> {
         itemCount: orders.length,
         itemBuilder: (context, index) {
           final order = orders[index];
-
           return InkWell(
             onTap: () {
               Navigator.push(

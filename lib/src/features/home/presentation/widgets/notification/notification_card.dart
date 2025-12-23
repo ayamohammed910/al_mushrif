@@ -35,7 +35,7 @@ class NotificationCard extends StatelessWidget {
                 ),
                 SizedBox(height: AppSizes.h8),
                 CustomText(
-                  order.date+"  "+order.time,
+                  "${order.date}  ${order.time}",
                   textStyle: TextStyle(
                     fontSize: AppSizes.fs12,
                     color: AppColors.grey,
