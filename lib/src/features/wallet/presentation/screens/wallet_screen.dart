@@ -1,6 +1,14 @@
 part of '../../wallet_imports.dart';
 
-class WalletScreen extends StatelessWidget {
+class WalletScreen extends StatefulWidget {
+
+  WalletScreen({super.key});
+
+  @override
+  State<WalletScreen> createState() => _WalletScreenState();
+}
+
+class _WalletScreenState extends State<WalletScreen> {
   final List<TransactionModel> transactions = [
     TransactionModel(
       title: "Deduct",
@@ -39,7 +47,6 @@ class WalletScreen extends StatelessWidget {
       time: "6 days ago",
     ),
   ];
-  WalletScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -90,10 +97,8 @@ class WalletScreen extends StatelessWidget {
                 showModalBottomSheet(
                   context: context,
                   isScrollControlled: true,
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(24),
-                    ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
                   ),
                   builder: (_) => const ChargeWalletBottomSheet(),
                 );

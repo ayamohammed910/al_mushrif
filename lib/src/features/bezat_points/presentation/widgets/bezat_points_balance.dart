@@ -6,7 +6,7 @@ class BezatPointsBalance extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+      alignment: Alignment.center,
       margin: const EdgeInsets.all(AppSizes.p16),
       padding: const EdgeInsets.all(AppSizes.p20),
       decoration: BoxDecoration(

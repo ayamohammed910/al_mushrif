@@ -1,11 +1,12 @@
 part of '../../wallet_imports.dart';
+
 class WalletBalanceCard extends StatelessWidget {
   const WalletBalanceCard({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      width: double.infinity,
+    return Container(
+      alignment: Alignment.center,
       margin: const EdgeInsets.symmetric(horizontal: AppSizes.p16),
       padding: const EdgeInsets.all(AppSizes.p24),
       decoration: BoxDecoration(
