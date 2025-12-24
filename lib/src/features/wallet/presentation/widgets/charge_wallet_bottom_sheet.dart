@@ -10,12 +10,16 @@ class ChargeWalletBottomSheet extends StatefulWidget {
 
 class _ChargeWalletBottomSheetState extends State<ChargeWalletBottomSheet> {
   String? selectedPaymentMethod;
-  final TextEditingController amountController = TextEditingController();
-
+  final TextEditingController amount_controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(AppSizes.p16),
+    return SingleChildScrollView(
+      padding: EdgeInsets.only(
+        left: AppSizes.p16,
+        right: AppSizes.p16,
+        top: AppSizes.p16,
+        bottom: MediaQuery.of(context).viewInsets.bottom + AppSizes.p16,
+      ),
       child: Container(
         color: AppColors.ScafoldBackground,
         child: Column(
@@ -24,16 +28,15 @@ class _ChargeWalletBottomSheetState extends State<ChargeWalletBottomSheet> {
           children: [
             Row(
               children: [
-                Spacer(),
-                CustomText(
+                const Spacer(),
+                const CustomText(
                   "Charge Wallet Balance",
                   textStyle: TextStyle(
                     fontSize: AppSizes.fs18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Spacer(),
-
+                const Spacer(),
                 IconButton(
                   icon: const Icon(Icons.close),
                   onPressed: () => Navigator.pop(context),
@@ -48,9 +51,10 @@ class _ChargeWalletBottomSheetState extends State<ChargeWalletBottomSheet> {
               textStyle: TextStyle(fontSize: AppSizes.fs18),
             ),
             const SizedBox(height: AppSizes.h8),
+
             CustomTextField(
               hint: "Enter Amount",
-              controller: amountController,
+              controller: amount_controller,
             ),
 
             const SizedBox(height: AppSizes.h16),
@@ -65,6 +69,7 @@ class _ChargeWalletBottomSheetState extends State<ChargeWalletBottomSheet> {
               onTap: () {
                 showModalBottomSheet<String>(
                   context: context,
+                  isScrollControlled: true,
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(24),
@@ -125,6 +130,7 @@ class _ChargeWalletBottomSheetState extends State<ChargeWalletBottomSheet> {
                 ),
               ),
             ),
+
             const SizedBox(height: AppSizes.h24),
 
             CustomButton(text: "Continue To Payment", onPressed: () {}),
