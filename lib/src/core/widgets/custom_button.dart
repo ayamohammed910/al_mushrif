@@ -10,6 +10,8 @@ class CustomButton extends StatelessWidget {
   final double? width;
   final double? hight;
   final Color color;
+  final Color Textcolor;
+
   const CustomButton({
     super.key,
     required this.text,
@@ -17,7 +19,9 @@ class CustomButton extends StatelessWidget {
     this.isPrimary = true,
     this.width,
     this.hight,
-    this.color=AppColors.primary
+    this.color=AppColors.primary,
+    this.Textcolor=AppColors.white
+
   });
 
   @override
@@ -40,6 +44,8 @@ class CustomButton extends StatelessWidget {
           textStyle: TextStyle(
             fontSize: AppSizes.fs20,
             fontWeight: FontWeight.bold,
+            color: Textcolor
+
           ),
         ),
       ),

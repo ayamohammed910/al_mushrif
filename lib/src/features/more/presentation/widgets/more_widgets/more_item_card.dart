@@ -1,4 +1,4 @@
-part of '../../more_imports.dart';
+part of '../../../more_imports.dart';
 
 
 class MoreItemCard extends StatelessWidget {

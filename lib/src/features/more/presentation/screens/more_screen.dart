@@ -29,11 +29,11 @@ class MoreScreen extends StatelessWidget {
 
             const SizedBox(height: AppSizes.h20),
             buildSectionTitle("Browse"),
-            MoreGrid(items: Browse),
+            MoreGrid(items: Browse(context)),
 
             const SizedBox(height: AppSizes.h20),
             buildSectionTitle("Support"),
-            MoreGrid(items: Support),
+            MoreGrid(items: support(context)),
 
             const SizedBox(height: AppSizes.h20),
             buildSectionTitle("Other"),
@@ -60,7 +60,16 @@ class MoreScreen extends StatelessWidget {
 
 List<MoreItem> getYourShortcuts(BuildContext context) {
   return [
-    MoreItem(image: "assets/svg/loyalty_icon.svg", title: "Manage Profile"),
+    MoreItem(
+      image: "assets/svg/loyalty_icon.svg",
+      title: "Manage Profile",
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => ProfilePage()),
+        );
+      },
+    ),
     MoreItem(
       image: "assets/svg/loyalty_discount_icon.svg",
       title: "My Wallet",
@@ -88,7 +97,7 @@ List<MoreItem> getYourShortcuts(BuildContext context) {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (_) =>  BezatPointsPage()),
+          MaterialPageRoute(builder: (_) => BezatPointsPage()),
         );
       },
     ),
@@ -126,21 +135,40 @@ List<MoreItem> getYourShortcuts(BuildContext context) {
   ];
 }
 
-List<MoreItem> Browse = [
-  MoreItem(image: "assets/svg/all_brands_icon.svg", title: "All Brands"),
+List<MoreItem> Browse(BuildContext context) {
+
+return[
+  MoreItem(image: "assets/svg/all_brands_icon.svg", title: "All Brands",
+    onTap: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) =>  AllBrandsPage()),
+      );
+    },),
   MoreItem(
     image: "assets/svg/all_categories_icon.svg",
     title: "All Categories",
   ),
-];
-
-List<MoreItem> Support = [
-  MoreItem(image: "assets/svg/all_brands_icon.svg", title: "Support"),
-  MoreItem(
-    image: "assets/svg/all_categories_icon.svg",
-    title: "Support Tickets",
-  ),
-];
+];}
+List<MoreItem> support(BuildContext context) {
+  return [
+    MoreItem(
+      image: "assets/svg/all_brands_icon.svg",
+      title: "Support",
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const SupportPage()),
+        );
+      },
+    ),
+    MoreItem(
+      image: "assets/svg/all_categories_icon.svg",
+      title: "Support Tickets",
+      onTap: () {},
+    ),
+  ];
+}
 
 List<MoreItem> Other = [
   MoreItem(image: "assets/svg/loyalty_discount_icon.svg", title: "WishLists"),
