@@ -5,6 +5,8 @@ import 'package:al_mushrif/src/core/widgets/custom_outLine_button.dart';
 import 'package:al_mushrif/src/core/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
+import '../../core/widgets/info_row.dart';
+
 part 'presentation/screens/orders_screen.dart';
 part 'presentation/widgets/orders/order_item_widget.dart';
 part 'presentation/widgets/orders_details/order_details_page.dart';
@@ -20,4 +22,3 @@ part 'presentation/widgets/track_order/OrderStatusTile.dart';
 part 'presentation/widgets/order_summary/order_summary_page.dart';
 part 'presentation/widgets/order_summary/order_card.dart';
 part 'presentation/widgets/order_summary/product_card.dart';
-part 'presentation/widgets/order_summary/info_row.dart';

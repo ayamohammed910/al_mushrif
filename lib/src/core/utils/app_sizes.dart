@@ -35,6 +35,10 @@ class AppSizes {
   static const double h16 = 16;
   static const double h20 = 20;
   static const double h24 = 24;
+  static const double h26 = 26;
+
+  static const double h30 = 30;
+
   static const double h32 = 32;
   static const double h36 = 36;
   static const double h40 = 40;
@@ -64,6 +68,8 @@ class AppSizes {
   static const double w16 = 16;
   static const double w20 = 20;
   static const double w24 = 24;
+  static const double w30 = 30;
+
   static const double w32 = 32;
   static const double w36 = 36;
   static const double w40 = 40;
@@ -75,6 +81,8 @@ class AppSizes {
   static const double w100 = 100;
   static const double w120 = 120;
   static const double w160 = 160;
+  static const double w180 = 180;
+
   static const double w200 = 200;
   static const double w250 = 250;
 

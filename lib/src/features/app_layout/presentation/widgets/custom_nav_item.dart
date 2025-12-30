@@ -1,5 +1,4 @@
 part of '../../app_layout_imports.dart';
-
 class CustomNavBar extends StatelessWidget {
   final int currentIndex;
   final ValueChanged<int> onTap;
@@ -19,7 +18,7 @@ class CustomNavBar extends StatelessWidget {
       "assets/svg/offers.svg",
       "assets/svg/more.svg",
     ];
-    final labels = ["Home", "Categories", "Cart","Offers", "More"];
+    final labels = ["Home", "Categories", "Cart", "Offers", "More"];
 
     return AnimatedBottomNavigationBar.builder(
       notchMargin: 0,
@@ -45,7 +44,7 @@ class CustomNavBar extends StatelessWidget {
                 color: active ? AppColors.white : AppColors.black,
               ),
             ),
-             SizedBox(height: AppSizes.h2),
+            SizedBox(height: AppSizes.h2),
             Text(
               labels[index],
               style: TextStyle(

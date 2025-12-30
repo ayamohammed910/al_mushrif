@@ -135,7 +135,7 @@ class _CartDialogState extends State<CartDialog> {
             SizedBox(
               width: double.infinity,
               child: CustomElevatedButton(
-                imagePath: "assets/svg/cart.svg",
+                imagePath: "assets/svg/cart_widgets.svg",
                 text: "Add To Cart",
                 onPressed: () {},
               ),

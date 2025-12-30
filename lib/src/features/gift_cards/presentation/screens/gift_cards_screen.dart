@@ -74,7 +74,6 @@ class _GiftCardsScreenState extends State<GiftCardsScreen> {
   }
 
 
-  ///ُTODO ??!..details ليه صفحتين
   void onPress(GiftModel item, BuildContext context) {
     if (item.subscriber) {
       Navigator.push(

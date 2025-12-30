@@ -79,7 +79,7 @@ class CategoryTypePage extends StatelessWidget {
           backgroundColor: AppColors.primary,
           shape: const CircleBorder(),
           child: SvgPicture.asset(
-            "assets/svg/cart.svg",
+            "assets/svg/cart_widgets.svg",
             width: AppSizes.w32,
             height: AppSizes.h32,
             colorFilter: const ColorFilter.mode(

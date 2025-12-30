@@ -2,6 +2,7 @@ import 'package:al_mushrif/src/core/utils/app_colors.dart';
 import 'package:al_mushrif/src/core/utils/app_sizes.dart';
 import 'package:al_mushrif/src/core/widgets/custom_text.dart';
 import 'package:al_mushrif/src/features/auth/login_imports.dart';
+import 'package:al_mushrif/src/features/cart/cart_imports.dart';
 import 'package:al_mushrif/src/features/categories/categories_imports.dart';
 import 'package:al_mushrif/src/features/forget_password/forget_password_imports.dart';
 import 'package:al_mushrif/src/features/home/home_imports.dart';

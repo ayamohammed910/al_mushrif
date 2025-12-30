@@ -1,5 +1,4 @@
 part of '../../app_layout_imports.dart';
-
 class AppLayoutScreen extends StatefulWidget {
   const AppLayoutScreen({super.key});
 
@@ -13,7 +12,7 @@ class _AppLayoutScreenState extends State<AppLayoutScreen> {
   final List<Widget> screens = [
     HomeScreen(),
     CategoriesPage(),
-    Container(child: Text("text")),
+    CartScreen(),  // CartScreen should be the target for the "Cart" tab and FAB
     OffersScreen(),
     MoreScreen(),
   ];
@@ -22,20 +21,31 @@ class _AppLayoutScreenState extends State<AppLayoutScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.ScafoldBackground,
-      body: screens[_currentIndex],
-      floatingActionButton: FloatingButton(onPressed: () {setState(() {
-        _currentIndex = 2;
-      });}),
-
+      body: screens[_currentIndex], // Display the screen based on _currentIndex
+      floatingActionButton: FloatingButton(
+        onPressed: () {
+          // Navigate to CartScreen when FAB is clicked
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const CartScreen()),
+          );
+        },
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-
       bottomNavigationBar: CustomNavBar(
-
         currentIndex: _currentIndex,
         onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
+          if (index == 2) {
+            // If the "Cart" tab is tapped, navigate to CartScreen
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const CartScreen()),
+            );
+          } else {
+            setState(() {
+              _currentIndex = index; // Update current index for other tabs
+            });
+          }
         },
       ),
     );

@@ -1,4 +1,5 @@
-part of '../../../orders_imports.dart';
+import 'package:flutter/material.dart';
+
 class InfoRow extends StatelessWidget {
   final String title;
   final String value;
@@ -20,9 +21,8 @@ class InfoRow extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Fixed width label (important for alignment)
           SizedBox(
-            width: 150, // adjust if needed
+            width: 150,
             child: Text(
               "$title :",
               style: const TextStyle(

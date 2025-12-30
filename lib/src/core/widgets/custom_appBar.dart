@@ -10,19 +10,21 @@ class CustomAppBar extends StatelessWidget
   final String title;
   final VoidCallback? onBack;
   final bool showBack;
+  final Color backgroundColor;
 
   const CustomAppBar({
     super.key,
     required this.title,
     this.onBack,
     this.showBack = true,
+    this.backgroundColor=AppColors.ScafoldBackground
   });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      backgroundColor: AppColors.ScafoldBackground,
+      backgroundColor: backgroundColor,
       centerTitle: true,
       leading: showBack
           ? IconButton(

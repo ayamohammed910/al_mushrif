@@ -1,5 +1,4 @@
 part of '../../app_layout_imports.dart';
-
 class FloatingButton extends StatelessWidget {
   final VoidCallback onPressed;
 
@@ -7,17 +6,18 @@ class FloatingButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        FloatingActionButton(
-          onPressed: onPressed,
-          backgroundColor: AppColors.primary,
-          shape: const CircleBorder(),
-          child: SvgPicture.asset("assets/svg/cart.svg",color: AppColors.white,height: AppSizes.h24,)
+    return FloatingActionButton(
+      onPressed: onPressed,
+      backgroundColor: AppColors.primary,
+      shape: const CircleBorder(),
+      child: SizedBox(
+        height: 24,
+        width: 24,
+        child: SvgPicture.asset(
+          "assets/svg/cart.svg",
+          color: AppColors.white,
         ),
-        const SizedBox(height: AppSizes.h24),
-      ],
+      ),
     );
   }
 }

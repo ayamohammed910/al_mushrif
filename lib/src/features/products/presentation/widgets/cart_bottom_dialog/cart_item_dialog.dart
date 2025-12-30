@@ -154,15 +154,15 @@ class _CartItemDialogState extends State<CartItemDialog> {
                   borderRadius: BorderRadius.circular(12),
                   onTap: () {
                     setState(() {
-                      isFavorite = !isFavorite; // قلب الحالة
+                      isFavorite = !isFavorite;
                     });
-                    widget.onFavorite(); // استدعاء callback إذا تحتاج
+                    widget.onFavorite();
                   },
                   child: Center(
                     child: SvgPicture.asset(
                       isFavorite
-                          ? "assets/svg/fav_icon.svg" // الصورة عند التفعيل
-                          : "assets/svg/empty_fav_icon.svg", // الصورة الافتراضية
+                          ? "assets/svg/fav_icon.svg"
+                          : "assets/svg/empty_fav_icon.svg",
                       width: AppSizes.w16,
                       height: AppSizes.h16,
                     ),
