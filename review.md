@@ -1,12 +1,30 @@
 
 last review points
 
+# search_bar.dart
+- مفيش shadow ل التيكست فيلد 
+- شيلى ال shadow خالص كذالك ال row و ال expanded
+
+
+# profile_screen.dart
+لما الكيبورد بتتفتح الاسكرين بتضرب overflow -
+خلى ال scaffold جوا GestureDetector بحيث لما اضغط فى اى مكان الكيبور تتقفل  -
+- خلى ال logout و ال delete ف ال bottomNavigationBar
+
+# profile_image.dart
+- خلى  الايقونه لما اضغط عليها  اقدر اعمل pick ل صوره......لو بترنى emulator نزلي عليه اى صوره من كروم علشان تعرفى تجربى
+
+
+
+
+
+
+
 
 
 # wallet_balance_card.dart
 شيلى ال width
 و بدالها  alignment: Alignment.center,
-
 
 
 # charge_wallet_bottom_sheet.dart and bezt_points_balance.dart
@@ -17,28 +35,9 @@ last review points
 خليها stateful
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # vip_bottom_sheet.dart
 
 شيلى ال singleChild و خلى ال padding جوا ال listView وتكون بتسكرول عادى
-
 
 
  # gift_card_widget.dart
