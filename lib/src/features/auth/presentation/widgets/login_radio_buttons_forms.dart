@@ -1,7 +1,17 @@
 part of '../../login_imports.dart';
-
 class LoginRadioButtons extends StatefulWidget {
-  const LoginRadioButtons({super.key});
+  final TextEditingController emailController;
+  final TextEditingController mobileController;
+  final TextEditingController passwordController;
+  final ValueChanged<bool> onIsEmailChanged;
+
+  const LoginRadioButtons({
+    super.key,
+    required this.emailController,
+    required this.mobileController,
+    required this.passwordController,
+    required this.onIsEmailChanged,
+  });
 
   @override
   State<LoginRadioButtons> createState() => _LoginRadioButtonsState();
@@ -9,102 +19,96 @@ class LoginRadioButtons extends StatefulWidget {
 
 class _LoginRadioButtonsState extends State<LoginRadioButtons> {
   bool isEmail = true;
-  final emailController = TextEditingController();
-  final mobileController = TextEditingController();
-  final passwordController = TextEditingController();
-  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: formKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomText(
-            "Login with your e-mail address or mobile number",
-            textStyle: TextStyle(fontSize: AppSizes.fs14, color: AppColors.black),
-          ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        CustomText(
+          "Login with your e-mail address or mobile number",
+          textStyle: TextStyle(fontSize: AppSizes.fs14, color: AppColors.black),
+        ),
 
-          SizedBox(height: 10),
+        SizedBox(height: 10),
 
-          Row(
-            children: [
-              Radio(
-                value: true,
-                groupValue: isEmail,
-                activeColor: AppColors.primary,
-                onChanged: (val) {
-                  setState(() => isEmail = true);
-                },
-              ),
-              CustomText(
-                "E-mail Address",
-                textStyle: TextStyle(fontSize: AppSizes.fs16, fontWeight: FontWeight.w600),
-              ),
-
-              SizedBox(width: 15),
-              Radio(
-                value: false,
-                groupValue: isEmail,
-                activeColor: AppColors.primary,
-                onChanged: (val) {
-                  setState(() => isEmail = false);
-                },
-              ),
-              CustomText(
-                "Mobile Number",
-                textStyle: TextStyle(fontSize: AppSizes.fs16, fontWeight: FontWeight.w600),
-              ),
-            ],
-          ),
-          SizedBox(height: AppSizes.h10),
-
-          if (isEmail) ...[
+        Row(
+          children: [
+            Radio(
+              value: true,
+              groupValue: isEmail,
+              activeColor: AppColors.primary,
+              onChanged: (val) {
+                setState(() {
+                  isEmail = true;
+                  widget.onIsEmailChanged(true);
+                });
+              },
+            ),
             CustomText(
-              "E-mail",
+              "E-mail Address",
               textStyle: TextStyle(fontSize: AppSizes.fs16, fontWeight: FontWeight.w600),
             ),
 
-            SizedBox(height: AppSizes.h4),
-
-            CustomTextField(
-              hint: "Enter your E-mail",
-              controller: emailController,
-              obscure: true,
+            SizedBox(width: 15),
+            Radio(
+              value: false,
+              groupValue: isEmail,
+              activeColor: AppColors.primary,
+              onChanged: (val) {
+                setState(() {
+                  isEmail = false;
+                  widget.onIsEmailChanged(false);
+                });
+              },
             ),
-          ] else ...[
             CustomText(
-              "Mobile",
+              "Mobile Number",
               textStyle: TextStyle(fontSize: AppSizes.fs16, fontWeight: FontWeight.w600),
-            ),
-
-            SizedBox(height: AppSizes.h4),
-
-            CustomTextField(
-              hint: "Enter your mobile",
-              controller: mobileController,
-              obscure: true,
             ),
           ],
+        ),
 
-          SizedBox(height: AppSizes.h20),
+        SizedBox(height: AppSizes.h10),
 
+        if (isEmail) ...[
           CustomText(
-            "Password",
+            "E-mail",
             textStyle: TextStyle(fontSize: AppSizes.fs16, fontWeight: FontWeight.w600),
           ),
-
-          SizedBox(height: 5),
-
+          SizedBox(height: AppSizes.h4),
           CustomTextField(
-            hint: "Enter your password",
-            controller: passwordController,
-            obscure: true,
-            suffixIcon: Icons.visibility,
+            hint: "Enter your E-mail",
+            controller: widget.emailController,
+            obscure: false,
+          ),
+        ] else ...[
+          CustomText(
+            "Mobile",
+            textStyle: TextStyle(fontSize: AppSizes.fs16, fontWeight: FontWeight.w600),
+          ),
+          SizedBox(height: AppSizes.h4),
+          CustomTextField(
+            hint: "Enter your mobile",
+            controller: widget.mobileController,
+            obscure: false,
           ),
         ],
-      ),
+
+        SizedBox(height: AppSizes.h20),
+
+        CustomText(
+          "Password",
+          textStyle: TextStyle(fontSize: AppSizes.fs16, fontWeight: FontWeight.w600),
+        ),
+        SizedBox(height: 5),
+        CustomTextField(
+          hint: "Enter your password",
+          controller: widget.passwordController,
+          obscure: true,
+          suffixIcon: Icons.visibility,
+        ),
+      ],
     );
   }
 }

@@ -5,8 +5,12 @@ import 'package:al_mushrif/src/core/widgets/custom_logo.dart';
 import 'package:al_mushrif/src/core/widgets/custom_text.dart';
 import 'package:al_mushrif/src/core/widgets/custom_text_field.dart';
 import 'package:al_mushrif/src/features/app_layout/app_layout_imports.dart';
-import 'package:al_mushrif/src/features/forget_password/forget_password_imports.dart';
+import 'package:al_mushrif/src/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:al_mushrif/src/features/auth/presentation/cubit/auth_state.dart';
+import 'package:al_mushrif/src/features/forget_password/forget_password_imports.dart' hide CustomAppBar;
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:al_mushrif/src/core/widgets/custom_appBar.dart';
 
 part 'presentation/screens/auth_screen.dart';
 part 'presentation/widgets/auth_header.dart';
@@ -16,3 +20,4 @@ part 'presentation/widgets/register_forms.dart';
 part 'presentation/widgets/forget_password.dart';
 part 'presentation/widgets/login_body.dart';
 part 'presentation/widgets/register_body.dart';
+part 'presentation/widgets/verify_code.dart';

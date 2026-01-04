@@ -1,7 +1,9 @@
+import 'package:al_mushrif/src/core/network/dio_helper.dart';
 import 'package:flutter/material.dart';
 import 'src/features/auth/login_imports.dart';
 
 void main() {
+  DioHelper.init();
   runApp(const MyApp());
 }
 

@@ -1,5 +1,4 @@
 part of '../../login_imports.dart';
-
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
 
@@ -8,7 +7,6 @@ class AuthScreen extends StatefulWidget {
 }
 
 class _AuthScreenState extends State<AuthScreen> {
-  bool isLoginSelected = false;
   int _currentTab = 0;
 
   void _onTabChanged(int index) {
@@ -19,20 +17,22 @@ class _AuthScreenState extends State<AuthScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.ScafoldBackground,
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.all(AppSizes.p20),
-          child: Column(
-            children: [
-              _currentTab == 0
-                  ? LoginBody(onTabChanged: _onTabChanged)
-                  : RegisterBody(onTabChanged: _onTabChanged),
+    return BlocProvider(
+      create: (_) => AuthCubit(),
+      child: Scaffold(
+        backgroundColor: AppColors.ScafoldBackground,
+        body: SafeArea(
+          child: SingleChildScrollView(
+            padding: EdgeInsets.all(AppSizes.p20),
+            child: Column(
+              children: [
+                _currentTab == 0
+                    ? LoginBody(onTabChanged: _onTabChanged)
+                    : RegisterBody(onTabChanged: _onTabChanged),
 
-
-              SizedBox(height: AppSizes.h40),
-            ],
+                SizedBox(height: AppSizes.h40),
+              ],
+            ),
           ),
         ),
       ),
