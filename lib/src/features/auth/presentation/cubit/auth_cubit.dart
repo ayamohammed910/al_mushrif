@@ -10,7 +10,7 @@ class AuthCubit extends Cubit<AuthState> {
 
   static AuthCubit get(context) => BlocProvider.of(context);
 
-  void register({
+  Future<void> register({
     required String name,
     required String email,
     required String password,

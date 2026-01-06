@@ -1,6 +1,67 @@
 
 last review points
 
+
+
+
+# dio_helper.dart
+ضيفى ال interceptor ل dio
+دا باختصار بيظهر ليكى ف الرن تحت كل حاجه عن ال api الى بترن 
+و ال request و ال response الى راجع و سواء جابت success او لا 
+دورى بس ازاى تضيفى ال LogInterceptor ل dio 
+
+لو لسا ما عملتيش اكونت جربى الاكونت دا تعملى بيه login و تستخدميه بعدين طول ما انتى ف المشروع
+email => testityyy@gmail.com
+password => P@ssw0rd
+
+
+# login_body.dart and register_form.dart
+خليها stateFull
+
+
+# auth_cubit.dart
+بالنسبه ل deviceToken and macAddress الاتنين واحد عامه
+
+دول هيجو ب استخدام باكدج الفاير بيز
+دورى بس ازاى تجيبى ال deviceToken 
+هى function عايزك تضيفها ف class 
+
+- هتعملى folder جديد ف ال core اسمه helpers
+- هتعملى class سميه device_helper
+- جوا ال class ضيفى ال function و خليها static و استدعيها منه 
+
+device token 
+اغلبيه الاوقات  فايدته ان الباك اند بيحتاجه علشان يبعت اشعارات من عنده ل اليوزر 
+
+
+
+# general 
+وقت ما ال api بيتعمل ليها call عايزين حاجه تبين ل اليوزر ان فى اكشن حصل او يستنى شويه مثلا 
+علشان يعرف ان الريكوست اتبعت سواء بقى login او register او اين كان بعدين 
+مثلا ف حاله ال register 
+لما اليوزر يضغط على الزار يظهر مكانه loading indicator مثلا 
+خلى الزرار جوا blocBuilder من نوع ال authCubit 
+لو هو ف حاله ال loading يظهر ال indicator غير كدا الزرار يفضل ظاهر عادى 
+
+
+
+# main.dart  => معلومه صغيره بس
+ف حاله لو فى cubit او بلوك معمول و هحتاجه فى اكتر من صفحه و فى اكتر من مكان
+بدل ما كل صفحه هنفضل نعمل ليها blocProvider
+استعملى multiBlocProvider ف ال main
+(على ال material app )
+بتدى ليه ال providers اكتر من بلوك عادى
+و مكان ما انتى عايزه تستعملى اى بلوك منهم هتحطى بس blocBuilder او blocListener
+ساعتها بيكون البلوك دا على مستوى التطبيق كله
+
+دى بس معلومه مش اكتر علشان لو احتاجتيها فيما بعد قدام
+
+
+
+
+
+
+
 # search_bar.dart
 - مفيش shadow ل التيكست فيلد 
 - شيلى ال shadow خالص كذالك ال row و ال expanded
