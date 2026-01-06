@@ -14,6 +14,8 @@ last review points
 email => testityyy@gmail.com
 password => P@ssw0rd
 
+كود ال verify متثبت => 1234
+
 
 # login_body.dart and register_form.dart
 خليها stateFull
