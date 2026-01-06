@@ -14,7 +14,8 @@ last review points
 email => testityyy@gmail.com
 password => P@ssw0rd
 
-كود ال verify متثبت => 1234
+كود ال verify متثبت => 1234 
+ما عادا ف ال reset password ساعتها هتحتاجى gmail يوصل عليه رسائل
 
 
 # login_body.dart and register_form.dart
