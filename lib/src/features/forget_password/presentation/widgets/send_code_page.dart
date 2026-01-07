@@ -4,6 +4,7 @@ class SendCodePage extends StatelessWidget {
   final String email;
   SendCodePage({super.key, required this.email});
 
+
   final codeController = TextEditingController();
   final passWordController = TextEditingController();
   final confirmController = TextEditingController();
