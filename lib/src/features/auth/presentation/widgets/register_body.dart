@@ -28,7 +28,7 @@ class RegisterBody extends StatelessWidget {
             if (state is RegisterSuccess) {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => AppLayoutScreen()),
+                MaterialPageRoute(builder: (context) => VerifyCode(email: emailController.text,)),
               );
             }
 
