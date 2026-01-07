@@ -26,7 +26,6 @@ class RegisterBody extends StatelessWidget {
             }
 
             if (state is RegisterSuccess) {
-              // هنا ندخل على AppLayoutScreen مباشرة
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => AppLayoutScreen()),
@@ -47,14 +46,19 @@ class RegisterBody extends StatelessWidget {
           ),
         ),
         SizedBox(height: AppSizes.h32),
-        CustomButton(
-          text: "Register",
-          onPressed: () {
-            AuthCubit.get(context).register(
-              name: usernameController.text,
-              email: emailController.text,
-              password: passwordController.text,
-              confirmPassword: confirmController.text,
+        BlocBuilder<AuthCubit, AuthState>(
+          builder: (context, state) {
+            return CustomButton(
+              text: "Register",
+              isLoading: state is AuthLoading,
+              onPressed: () {
+                AuthCubit.get(context).register(
+                  name: usernameController.text,
+                  email: emailController.text,
+                  password: passwordController.text,
+                  confirmPassword: confirmController.text,
+                );
+              },
             );
           },
         ),

@@ -1,13 +1,13 @@
 import 'package:dio/dio.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../core/helper/device_helper.dart';
 import '../../../../core/network/dio_helper.dart';
 import '../../data/models/AuthModel.dart';
 import '../../data/models/register_response_model.dart';
 import 'auth_state.dart';
-
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
-
   static AuthCubit get(context) => BlocProvider.of(context);
 
   void register({
@@ -17,8 +17,8 @@ class AuthCubit extends Cubit<AuthState> {
     required String confirmPassword,
   }) async {
     emit(AuthLoading());
-
     try {
+      print("Register API called");
       final response = await DioHelper.post(
         url: 'register',
         data: FormData.fromMap({
@@ -28,7 +28,6 @@ class AuthCubit extends Cubit<AuthState> {
           'password_confirmation': confirmPassword,
         }),
       );
-
       final model = RegisterModel.fromJson(response.data);
       emit(RegisterSuccess(model));
     } on DioException catch (e) {
@@ -56,10 +55,18 @@ class AuthCubit extends Cubit<AuthState> {
     }
 
     try {
+      print("Login API called");
+
+      // ===== Get Device ID =====
+      final deviceId = await DeviceHelper.getDeviceId();
+
+      // ===== Get Firebase Device Token =====
+      final deviceToken = await FirebaseMessaging.instance.getToken() ?? '';
+
       final dataMap = {
         'password': password,
-        'mac_address': 'xxxx',
-        'device_token': 'xxxx',
+        'mac_address': deviceId,      // from DeviceHelper
+        'device_token': deviceToken,  // from FirebaseMessaging
       };
 
       if (email != null && email.isNotEmpty) {
@@ -83,21 +90,22 @@ class AuthCubit extends Cubit<AuthState> {
         emit(AuthError(response.data['msg'] ?? 'Login failed'));
       }
     } catch (e) {
-      emit(AuthError("Login failed"));
+      emit(AuthError("Login failed: $e"));
     }
   }
-
   Future<void> verifyCode({required String email, required String code}) async {
     emit(AuthLoading());
-
+    if (code.isEmpty) {
+      emit(AuthError("Please enter verification code"));
+      return;
+    }
     try {
+      print("Verify API called");
       final response = await DioHelper.post(
         url: 'email/verify',
         data: FormData.fromMap({'email': email, 'code': code}),
       );
-
       final key = response.data['key'];
-
       if (key == 'success') {
         final auth = AuthModel.fromJson(response.data['data']);
         emit(VerifySuccess(auth));

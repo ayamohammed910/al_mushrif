@@ -36,7 +36,7 @@ void _showDeleteDialog(BuildContext context) {
                   text: "Cancel",
                   onPressed: () => Navigator.pop(context),
                   color: Colors.grey.shade300,
-                  Textcolor: AppColors.black,
+                  TextColor: AppColors.black,
                 ),
               ],
             ),

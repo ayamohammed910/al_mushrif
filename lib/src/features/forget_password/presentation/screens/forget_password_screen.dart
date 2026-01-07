@@ -5,10 +5,13 @@ class ForgetPasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.white,
-      appBar: CustomAppBar(imagePath: "assets/png/profile_image.png"),
-      body: ForgetPasswordBody()
+    return BlocProvider(
+      create: (_) => ForgetPassCubit(),
+      child: Scaffold(
+        backgroundColor: AppColors.ScafoldBackground,
+        appBar: CustomAppBar(imagePath: "assets/png/profile_image.png"),
+        body: const ForgetPasswordBody(),
+      ),
     );
   }
 }

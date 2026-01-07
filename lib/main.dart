@@ -1,8 +1,21 @@
+import 'package:al_mushrif/src/core/helper/firebase_options.dart';
 import 'package:al_mushrif/src/core/network/dio_helper.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'src/features/auth/login_imports.dart';
 
-void main() {
+Future<void> main()  async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  try {
+    if (Firebase.apps.isEmpty) {
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+    }
+  } catch (e) {
+    print("Firebase already initialized: $e");
+  }
   DioHelper.init();
   runApp(const MyApp());
 }

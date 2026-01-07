@@ -1,4 +1,5 @@
 part of '../../login_imports.dart';
+
 class VerifyCode extends StatelessWidget {
   final String email;
   VerifyCode({super.key, required this.email});
@@ -16,11 +17,12 @@ class VerifyCode extends StatelessWidget {
             Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(builder: (_) => AppLayoutScreen()),
-                  (route) => false,
+              (route) => false,
             );
           } else if (state is AuthError) {
-            ScaffoldMessenger.of(context)
-                .showSnackBar(SnackBar(content: Text(state.message)));
+            ScaffoldMessenger.of(
+              context,
+            ).showSnackBar(SnackBar(content: Text(state.message)));
           }
         },
         child: SingleChildScrollView(
@@ -47,12 +49,26 @@ class VerifyCode extends StatelessWidget {
 
               SizedBox(height: AppSizes.h40),
 
-              CustomButton(
-                text: "Verify",
-                onPressed: () {
-                  AuthCubit.get(context).verifyCode(
-                    email: email,
-                    code: codeController.text.trim(),
+              BlocBuilder<AuthCubit, AuthState>(
+                builder: (context, state) {
+                  return CustomButton(
+                    text: "Verify",
+                    isLoading: state is AuthLoading,
+                    onPressed: () {
+                      if (codeController.text.trim().isEmpty) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text("Please enter verification code"),
+                          ),
+                        );
+                        return;
+                      }
+
+                      AuthCubit.get(context).verifyCode(
+                        email: email,
+                        code: codeController.text.trim(),
+                      );
+                    },
                   );
                 },
               ),

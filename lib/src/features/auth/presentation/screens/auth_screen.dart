@@ -10,9 +10,7 @@ class _AuthScreenState extends State<AuthScreen> {
   int _currentTab = 0;
 
   void _onTabChanged(int index) {
-    setState(() {
-      _currentTab = index;
-    });
+    setState(() => _currentTab = index);
   }
 
   @override
@@ -26,10 +24,8 @@ class _AuthScreenState extends State<AuthScreen> {
             padding: EdgeInsets.all(AppSizes.p20),
             child: Column(
               children: [
-                _currentTab == 0
-                    ? LoginBody(onTabChanged: _onTabChanged)
-                    : RegisterBody(onTabChanged: _onTabChanged),
-
+                if (_currentTab == 0) LoginBody(onTabChanged: _onTabChanged),
+                if (_currentTab == 1) RegisterBody(onTabChanged: _onTabChanged),
                 SizedBox(height: AppSizes.h40),
               ],
             ),
